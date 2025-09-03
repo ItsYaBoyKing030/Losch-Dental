@@ -1,102 +1,281 @@
 <!doctype html>
 <html lang="nl">
 <head>
+  <!-- Meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elke Losch — Tandarts Endodontologie · Utrecht</title>
-  <meta name="description" content="Tandarts Elke Losch (Utrecht). Endodontologie en begeleiding van angstpatiënten. Werkzaam als zelfstandige in twee praktijken en docent tandheelkunde in Utrecht." />
+  <meta name="description" content="Tandarts Elke Losch (Utrecht). Endodontologie en begeleiding van angstpatiënten. Zelfstandig werkzaam in twee praktijken en docent tandheelkunde in Utrecht." />
+  <meta name="robots" content="index,follow" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Elke Losch — Tandarts Endodontologie · Utrecht" />
+  <meta property="og:description" content="Endodontologie & begeleiding van angstpatiënten. Rustig, duidelijk en precies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="elke-losch.jpg" />
+  <meta property="og:locale" content="nl_NL" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Design tokens (Minimalistisch Grijs) -->
   <style>
     :root{
-      --bg:#f7f8fa; --ink:#0f172a; --muted:#5b6575; --line:#e7eaf0;
-      --brand:#2b6cb0; --brand-2:#3182ce; --chip:#eef2f7;
-      --card:#ffffff; --shadow:0 8px 28px rgba(15,23,42,.06);
-      --radius:16px; --whatsapp:#25D366;
+      --bg:#f9fafb;           /* pagina-achtergrond */
+      --ink:#111827;          /* hoofdtekst (bijna-zwart) */
+      --muted:#6b7280;        /* secundaire tekst */
+      --line:#e5e7eb;         /* lijnen/borders */
+      --brand:#374151;        /* primair (donkergrijs) */
+      --brand-2:#111827;      /* diep accent */
+      --chip:#f3f4f6;         /* chip/label achtergrond */
+      --card:#ffffff;         /* kaart-achtergrond */
+      --shadow:0 8px 28px rgba(0,0,0,.06);
+      --radius:14px;
+      --radius-lg:18px;
+      --whatsapp:#25D366;     /* WhatsApp-knop */
+      --focus:0 0 0 3px rgba(55,65,81,.25);
+      --space:22px;           /* basismarge */
     }
-    *{box-sizing:border-box} html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink)}
-    img{max-width:100%;display:block}
-    a{color:var(--brand);text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:800}
-    .dot{width:24px;height:24px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:600;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#fff}
-    .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
-    .btn.whatsapp{background:var(--whatsapp);color:#fff}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:36px 0}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    h1{margin:0 0 10px;font-size:clamp(26px,3.8vw,40px);line-height:1.1}
-    p.lead{color:var(--muted);font-size:clamp(16px,2.3vw,18px);margin:0}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-    .chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:14px;color:#364152}
-    section{padding:14px 0}
-    h2{margin:0 0 8px;font-size:clamp(20px,3vw,26px)}
-    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+    /* Reset & basics */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:24px}
     .muted{color:var(--muted)}
-    footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:24px 0;margin-top:28px}
-    @media (max-width: 880px){ .hero{grid-template-columns:1fr} }
+    .eyebrow{font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#6b7280}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter:blur(10px);
+      background:rgba(249,250,251,.85);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800}
+    .dot{width:22px; height:22px; border-radius:8px; background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+    .navlinks{display:flex; gap:10px}
+    .link{
+      padding:8px 12px; border-radius:10px; border:1px solid transparent;
+    }
+    .link:hover{background:var(--chip); border-color:var(--line)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 16px; border-radius:12px; font-weight:600; border:1px solid var(--line);
+      background:linear-gradient(180deg,#fff, #f7f7f7); box-shadow:var(--shadow);
+    }
+    .btn.primary{
+      background:linear-gradient(180deg,var(--brand),var(--brand-2)); color:#fff; border-color:transparent;
+    }
+    .btn.whatsapp{ background:var(--whatsapp); color:#fff; border-color:transparent; }
+    .btn:focus-visible{ outline:none; box-shadow:var(--focus); }
+
+    /* Layout helpers */
+    section{padding:calc(var(--space) * 1.2) 0}
+    h1{margin:0 0 10px; font-size:clamp(28px,4vw,40px); line-height:1.12; font-weight:800}
+    h2{margin:0 0 8px; font-size:clamp(20px,3vw,26px); line-height:1.25}
+    p{margin:0}
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(12,1fr)}
+    .col-7{grid-column:span 7}
+    .col-5{grid-column:span 5}
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+      .col-7,.col-5{grid-column:auto}
+    }
+
+    /* Cards / blocks */
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg); padding:22px; box-shadow:var(--shadow)}
+    .card.tight{padding:18px}
+    .list{display:flex; flex-direction:column; gap:10px}
+    .divider{height:1px; background:var(--line); margin:var(--space) 0}
+
+    /* Hero */
+    .hero{align-items:center}
+    .hero .photo{border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--line)}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .chip{background:var(--chip); border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:13px; color:#374151}
+
+    /* Info rows */
+    .row{display:flex; align-items:center; gap:10px}
+    .kpi{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px}
+    .kpi .k{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; text-align:center}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line); padding:24px 0; color:var(--muted); font-size:14px; text-align:center}
   </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Elke Losch",
+    "jobTitle":"Tandarts (Endodontologie)",
+    "areaServed":"Utrecht",
+    "email":"mailto:elke_losch@yahoo.de",
+    "telephone":"+31648141864"
+  }
+  </script>
 </head>
 <body>
+  <!-- Header / Nav -->
   <header>
     <div class="wrap nav">
-      <div class="logo"><div class="dot"></div> <span>Elke Losch</span></div>
-      <nav style="display:flex;gap:10px">
-        <a class="btn ghost" href="#over">Over</a>
-        <a class="btn ghost" href="#specialismen">Specialismen</a>
-        <a class="btn" href="#contact">Contact</a>
+      <div class="brand"><div class="dot" aria-hidden="true"></div><span>Elke Losch</span></div>
+      <nav class="navlinks">
+        <a class="link" href="#over">Over</a>
+        <a class="link" href="#expertise">Expertise</a>
+        <a class="link" href="#ervaring">Ervaring</a>
+        <a class="btn primary" href="#contact">Afspraak / Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="hero">
-      <div class="card">
-        <h1>Tandarts in Utrecht met focus op endodontologie & angstpatiënten</h1>
-        <p class="lead">Ik ben <strong>Elke Losch</strong>, zelfstandig werkzaam bij <strong>twee praktijken</strong> in de regio Utrecht. Daarnaast geef ik met plezier les tandheelkunde aan de hogeschool in Utrecht. Rustig, duidelijk en precies — met aandacht voor comfort en resultaat.</p>
-        <div class="chips">
-          <span class="chip">Endodontologie (wortelkanaal)</span>
-          <span class="chip">Begeleiding angstpatiënten</span>
-          <span class="chip">Samenwerking met verwijzers</span>
-          <span class="chip">NL · DE · EN</span>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" href="#contact">Afspraak plannen</a>
-          <a class="btn ghost" href="#ervaring">Ervaring</a>
+    <!-- HERO -->
+    <section class="grid hero">
+      <div class="col-7">
+        <div class="card">
+          <span class="eyebrow">Regio Utrecht</span>
+          <h1>Endodontologie & begeleiding van angstpatiënten — rustig, duidelijk en precies.</h1>
+          <p class="muted" style="font-size:17px">Ik ben <strong>Elke Losch</strong>, zelfstandig tandarts werkzaam bij <strong>twee praktijken</strong> in en rond Utrecht. Daarnaast ben ik docent tandheelkunde aan de hogeschool in Utrecht. Mijn aanpak: stap-voor-stap, met tijd voor uitleg en een comfortabel gevoel in de stoel.</p>
+          <div class="chips">
+            <span class="chip">Wortelkanaalbehandelingen</span>
+            <span class="chip">Herbehandelingen</span>
+            <span class="chip">Angstpatiënten</span>
+            <span class="chip">Samenwerking met verwijzers</span>
+            <span class="chip">NL · DE · EN</span>
+          </div>
+
+          <div class="kpi">
+            <div class="k"><div style="font-weight:800">+10 jr</div><div class="muted">ervaring</div></div>
+            <div class="k"><div style="font-weight:800">2</div><div class="muted">praktijken</div></div>
+            <div class="k"><div style="font-weight:800">onderwijs</div><div class="muted">HU Utrecht</div></div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+            <a class="btn primary" href="#contact" aria-label="Plan een afspraak">Plan afspraak</a>
+            <a class="btn" href="#expertise" aria-label="Lees over expertise">Lees expertise</a>
+          </div>
         </div>
       </div>
-      <div class="card"><img src="elke-losch.jpg" alt="Portret van tandarts Elke Losch" /></div>
+
+      <div class="col-5">
+        <div class="photo">
+          <img src="elke-losch.jpg" alt="Portret van tandarts Elke Losch" />
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="grid">
+    <!-- OVER -->
+    <section id="over" class="grid">
+      <div class="col-7">
         <div class="card">
+          <h2>Over</h2>
+          <p class="muted">Patiënten waarderen mijn kalme benadering en heldere communicatie. Ik werk met moderne endodontische technieken (loupe/microscoop waar nodig) en stel een transparant behandelplan op met duidelijke nazorg. Comfort en kwaliteit staan altijd voorop.</p>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="card tight list">
+          <strong>Werkwijze in het kort</strong>
+          <div class="divider"></div>
+          <div class="row"><span>•</span><span class="muted">Intake & heldere uitleg (verwachtingen, stappen, alternatieven)</span></div>
+          <div class="row"><span>•</span><span class="muted">Pijnarme behandeling waar mogelijk, pauzes op verzoek</span></div>
+          <div class="row"><span>•</span><span class="muted">Samenwerking met eigen tandarts/verwijzer</span></div>
+          <div class="row"><span>•</span><span class="muted">Nazorg en duidelijke instructies</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise">
+      <h2 style="margin-bottom:10px">Expertise</h2>
+      <div class="grid">
+        <div class="col-4 card">
+          <strong>Endodontologie</strong>
+          <p class="muted">Diagnostiek, (her)behandelingen en complexe casuïstiek met behoud van element als uitgangspunt.</p>
+        </div>
+        <div class="col-4 card">
+          <strong>Angstpatiënten</strong>
+          <p class="muted">Rustig tempo, voorspelbare stappen en keuzevrijheid. Verdoving en pauzes wanneer jij dat nodig hebt.</p>
+        </div>
+        <div class="col-4 card">
+          <strong>Onderwijs</strong>
+          <p class="muted">Docent tandheelkunde (HU Utrecht): evidence-based, praktijkgericht en mensgericht.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERVARING -->
+    <section id="ervaring">
+      <h2 style="margin-bottom:10px">Ervaring & huidige werk</h2>
+      <div class="grid">
+        <div class="col-6 card">
+          <strong>Zelfstandig tandarts</strong>
+          <p class="muted">Actief bij <em>twee praktijken</em> in de regio Utrecht. Beschikbaarheid in overleg; verwijzingen welkom.</p>
+        </div>
+        <div class="col-6 card">
+          <strong>Docent tandheelkunde</strong>
+          <p class="muted">Begeleiding van studenten in klinische vaardigheden en communicatie aan de hogeschool in Utrecht.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (details/summary = toegankelijk en simpel) -->
+    <section>
+      <h2 style="margin-bottom:10px">Veelgestelde vragen</h2>
+      <div class="card">
+        <details>
+          <summary style="cursor:pointer; padding:10px 0; font-weight:600">Doet een wortelkanaalbehandeling pijn?</summary>
+          <p class="muted">Met goede verdoving is de behandeling doorgaans goed te doen. We werken stap-voor-stap en nemen tijd voor pauzes.</p>
+        </details>
+        <div class="divider"></div>
+        <details>
+          <summary style="cursor:pointer; padding:10px 0; font-weight:600">Werk je op verwijzing?</summary>
+          <p class="muted">Ja. In overleg met je eigen tandarts stemmen we onderzoek, behandeling en nazorg af.</p>
+        </details>
+        <div class="divider"></div>
+        <details>
+          <summary style="cursor:pointer; padding:10px 0; font-weight:600">Waar werk je?</summary>
+          <p class="muted">In en rond Utrecht, momenteel bij twee verschillende praktijken. Concrete tijden in overleg.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 style="margin-bottom:10px">Contact</h2>
+      <div class="grid">
+        <div class="col-6 card">
           <p><strong>Elke Losch</strong></p>
-          <p>📞 <a href="tel:+31648141864">+31 6 48 14 18 64</a><br/>
-             ✉️ <a href="mailto:elke_losch@yahoo.de">elke_losch@yahoo.de</a></p>
-          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn whatsapp" href="https://wa.me/31648141864" target="_blank">WhatsApp</a>
-            <a class="btn ghost" href="mailto:elke_losch@yahoo.de">E-mail</a>
+          <p class="muted" style="margin-top:6px">Werkgebied: Utrecht en omgeving</p>
+          <div class="divider"></div>
+          <div class="list">
+            <a class="btn primary" href="mailto:elke_losch@yahoo.de" aria-label="E-mail naar Elke Losch">✉️ E-mail</a>
+            <a class="btn" href="tel:+31648141864" aria-label="Bel Elke Losch">📞 Bellen</a>
+            <a class="btn whatsapp" href="https://wa.me/31648141864" target="_blank" rel="noopener" aria-label="WhatsApp met Elke Losch">WhatsApp</a>
           </div>
           <p class="muted" style="margin-top:10px">WhatsApp of sms heeft mijn voorkeur. Ik reageer zo snel mogelijk.</p>
         </div>
-        <div class="card">
-          <p class="muted">Werkgebied: Utrecht en omgeving. Afspraken en verwijzingen in overleg.</p>
+        <div class="col-6 card">
+          <strong>Beschikbaarheid</strong>
+          <p class="muted" style="margin-top:6px">Afspraken op werkdagen; tijden in overleg. Verwijzingen van je eigen tandarts zijn welkom.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">© <span id="y"></span> Elke Losch — Tandarts · Utrecht</div>
+    © <span id="y"></span> Elke Losch — Tandarts · Utrecht
     <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </footer>
 </body>
 </html>
-
