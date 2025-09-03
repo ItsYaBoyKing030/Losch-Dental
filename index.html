@@ -140,6 +140,38 @@
 
     .divider{height:1px; background:linear-gradient(90deg, transparent, #26303c, transparent); margin:18px 0}
     footer{padding:26px 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
+
+    /* === Mobile polish (telefoon) === */
+    @media (max-width: 760px){
+      /* 1) Layout: 1 kolom + compactere secties */
+      .layout{ grid-template-columns:1fr; gap:16px; }
+      section{ padding:22px 0; }
+
+      /* 2) Sidebar: horizontale pill-navigatie */
+      aside{
+        position:static;
+        background:transparent; border:0; padding:0; box-shadow:none;
+        margin:4px 0 2px;
+      }
+      #sideNav{
+        display:flex; gap:8px; overflow-x:auto; white-space:nowrap; padding:2px 0;
+        -webkit-overflow-scrolling:touch; scrollbar-width:none;
+      }
+      #sideNav::-webkit-scrollbar{ display:none; }
+      .sidelink{ background:#0c1116; border:1px solid var(--line); color:var(--ink); }
+      .sidelink.active{ background:#10141a; }
+
+      /* 3) Header: toplinks verbergen (we gebruiken de horizontale nav) */
+      .toplinks{ display:none; }
+
+      /* 4) Typografie & knoppen: iets royaler tikdoel */
+      h1{ font-size:clamp(28px,5.5vw,34px); }
+      h2{ font-size:clamp(18px,4.8vw,24px); }
+      .btn{ padding:12px 16px; }
+
+      /* 5) Cards: luchtiger rand op kleine schermen */
+      .card{ border-radius:14px; padding:18px; }
+    }
   </style>
 </head>
 <body>
@@ -175,18 +207,18 @@
 
     <!-- Main content -->
     <div>
-      <!-- HERO (foto verwijderd, full-width tekst) -->
+      <!-- HERO (professionelere kop, foto verwijderd) -->
       <section id="hero">
         <div class="grid">
           <div class="col-12">
             <div class="card alt">
               <span class="eyebrow">Utrecht &amp; regio</span>
-              <h1>Endodontologie &amp; begeleiding van angstpatiënten — rustig, duidelijk en precies.</h1>
+              <h1>Tandarts Endodontologie — Utrecht</h1>
               <p class="muted" style="font-size:17px; margin-top:8px">
-                Ik ben <strong style="color:#F3F6FA">Elke Losch</strong>, zelfstandig tandarts werkzaam bij
-                <strong style="color:#F3F6FA">twee praktijken</strong> in en rond Utrecht. Daarnaast geef ik les
-                tandheelkunde aan de hogeschool in Utrecht. Mijn aanpak: stap-voor-stap, evidence-based en met aandacht
-                voor comfort.
+                Precisie, rust en heldere communicatie. Ik ben <strong style="color:#F3F6FA">Elke Losch</strong>,
+                zelfstandig tandarts actief bij <strong style="color:#F3F6FA">twee praktijken</strong> in en rond Utrecht
+                en docent tandheelkunde aan de hogeschool in Utrecht. Mijn aanpak is evidence-based en stap-voor-stap,
+                met aandacht voor comfort — ook bij angst.
               </p>
               <div class="chips">
                 <span class="chip">Wortelkanaalbehandelingen</span>
