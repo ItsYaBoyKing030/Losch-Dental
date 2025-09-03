@@ -4,37 +4,48 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elke Losch — Tandarts Endodontologie · Utrecht</title>
-  <meta name="description" content="CV-profiel van tandarts Elke Losch (Utrecht). Endodontologie en begeleiding van angstpatiënten. Opleiding in Duitsland. Zelfstandig in twee praktijken en docent tandheelkunde." />
+  <meta name="description" content="Profiel van tandarts Elke Losch (Utrecht). Endodontologie en begeleiding van angstpatiënten. Opleiding in Duitsland. Zelfstandig in twee praktijken en docent tandheelkunde." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <!-- Inter (body) + Cormorant Garamond (luxury headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Monochrome premium palette */
-      --bg:#0e1116;         /* page background (near-black) */
-      --bg-soft:#121519;    /* dark band */
-      --ink:#ECEFF3;        /* main light text */
-      --muted:#A3ABB6;      /* secondary text */
-      --line:#1b2027;       /* borders on dark */
-      --card:#ffffff;       /* cards on dark */
-      --card-ink:#0e1116;   /* text on cards */
-      --chip:#f3f4f6;       /* pill labels */
-      --brand:#181c22;      /* grayscale button grad (top) */
-      --brand-2:#0d1117;    /* grayscale button grad (bottom) */
-      --shadow:0 18px 60px rgba(0,0,0,.35);
+      /* Monochrome premium palette (meer grijs, subtiel verschil) */
+      --bg:#0b0e12;         /* page background (near-black) */
+      --bg-soft:#11151b;    /* band background */
+      --ink:#E9EDF2;        /* hoofdtekst licht */
+      --muted:#A4ACB8;      /* secundaire tekst */
+      --line:#1a2028;       /* haarlijn op donker */
+      --line-soft:#161b22;  /* nog subtieler */
+
+      --card:#141920;       /* card donkergrijs */
+      --card-2:#181e26;     /* card variant */
+      --card-ink:#F2F5F9;   /* tekst op cards */
+      --chip:#1b212a;       /* pill labels */
+      --chip-line:#202734;  /* rand pill labels */
+
+      --btn-top:#212832;    /* knop gradient boven */
+      --btn-bot:#12171d;    /* knop gradient onder */
+
+      --shadow:0 20px 60px rgba(0,0,0,.40);
       --radius:16px; --radius-lg:22px;
-      --focus:0 0 0 3px rgba(255,255,255,.16);
-      --wrap:1180px;
+      --focus:0 0 0 3px rgba(255,255,255,.14);
+      --wrap:1160px;
+      --measure:68ch;       /* ideale regellengte voor leesbare paragrafen */
     }
 
+    /* Base */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
       background:
-        radial-gradient(70% 60% at 10% 0%, rgba(255,255,255,.06), transparent 60%),
-        radial-gradient(60% 50% at 100% 0%, rgba(255,255,255,.04), transparent 60%),
+        radial-gradient(70% 60% at 12% 0%, rgba(255,255,255,.05), transparent 60%),
+        radial-gradient(55% 45% at 100% 0%, rgba(255,255,255,.035), transparent 60%),
         var(--bg);
       color:var(--ink);
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -45,95 +56,104 @@
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
     .wrap{max-width:var(--wrap); margin:0 auto; padding:20px}
+    .hairline{border-top:1px solid var(--line-soft)}
+    .muted{color:var(--muted)}
+    .eyebrow{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#c6cbd3; opacity:.9}
+
+    /* Type scale */
+    h1,h2{font-family:"Cormorant Garamond", serif; line-height:1.1; letter-spacing:.2px; margin:0}
+    h1{font-weight:700; font-size:clamp(34px,4vw,48px)}
+    h2{font-weight:600; font-size:clamp(22px,3vw,30px)}
+    p{margin:0; max-width:var(--measure)}
 
     /* Header */
     header{
       position:sticky; top:0; z-index:60;
       backdrop-filter:blur(10px);
-      background:rgba(16,19,24,.75);
+      background:rgba(13,17,22,.78);
       border-bottom:1px solid var(--line);
     }
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
-    .dot{width:22px; height:22px; border-radius:8px; background:linear-gradient(135deg,#2a2f36,#0c0f13)}
-    .toplinks{display:flex; gap:8px}
-    .chiplink{padding:8px 12px; border-radius:12px; border:1px solid #1f252d; color:var(--muted)}
-    .chiplink:hover{color:#fff; background:#0b0f14}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
+    .mark{
+      display:grid; place-items:center; width:28px; height:28px; border-radius:10px;
+      background:linear-gradient(145deg,#232833,#0c1015); box-shadow:inset 0 0 0 1px #0f141a;
+      color:#cdd3db; font-family:"Cormorant Garamond", serif; font-weight:600; font-size:16px;
+    }
+    .toplinks{display:flex; gap:10px}
+    .chiplink{
+      padding:8px 12px; border-radius:12px; border:1px solid var(--line); color:var(--muted);
+      background:linear-gradient(180deg,#0f1318,#0b0f14);
+    }
+    .chiplink:hover{color:#fff; background:#0c1116; border-color:#212733}
 
-    /* Buttons (monochrome) */
+    /* Buttons (monochroom) */
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:10px 16px; border-radius:12px; font-weight:600; border:1px solid #1f252d;
-      background:linear-gradient(180deg,var(--brand),var(--brand-2)); color:#f3f4f6;
-      box-shadow:0 8px 22px rgba(0,0,0,.35);
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:10px 16px; border-radius:12px; font-weight:600; border:1px solid var(--line);
+      background:linear-gradient(180deg,var(--btn-top),var(--btn-bot)); color:#F3F6FA;
+      box-shadow:0 10px 24px rgba(0,0,0,.38);
     }
     .btn.ghost{background:transparent; color:var(--ink)}
     .btn:focus-visible{outline:none; box-shadow:var(--focus)}
 
     /* Layout: aside + main content */
-    .layout{display:grid; grid-template-columns:280px 1fr; gap:20px}
-    @media (max-width: 950px){ .layout{grid-template-columns:1fr} }
+    .layout{display:grid; grid-template-columns:280px 1fr; gap:22px}
+    @media (max-width: 980px){ .layout{grid-template-columns:1fr} }
 
     /* Sticky sidebar */
     aside{
-      position:sticky; top:84px; height:max-content;
-      background:var(--bg-soft); border:1px solid var(--line);
-      border-radius:18px; padding:16px;
+      position:sticky; top:88px; height:max-content;
+      background:linear-gradient(180deg,#10141a,#0e1217);
+      border:1px solid var(--line); border-radius:18px; padding:16px;
+      box-shadow:var(--shadow);
     }
     .sideblock{display:flex; flex-direction:column; gap:12px}
     .sidelink{
       display:flex; align-items:center; gap:10px; padding:10px 12px;
-      border-radius:12px; color:var(--muted);
-      border:1px solid transparent; letter-spacing:.2px;
+      border-radius:12px; color:var(--muted); letter-spacing:.2px;
+      border:1px solid transparent;
     }
-    .sidelink:hover{background:#0b0f14; color:#fff; border-color:#1f252d}
-    .sidelink.active{background:#0b0f14; color:#fff; border-color:#1f252d}
+    .sidelink:hover{background:#0c1116; color:#fff; border-color:var(--line)}
+    .sidelink.active{background:#0c1116; color:#fff; border-color:var(--line)}
 
     /* Sections */
-    section{padding:28px 0}
+    section{padding:30px 0}
     .band{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-    h1{margin:0 0 12px; font-size:clamp(28px,4vw,40px); line-height:1.12; font-weight:800; letter-spacing:.1px}
-    h2{margin:0 0 10px; font-size:clamp(20px,3vw,26px); letter-spacing:.2px}
-    p{margin:0} .muted{color:var(--muted)}
-    .grid{display:grid; gap:16px; grid-template-columns:repeat(12,1fr)}
-    .col-7{grid-column:span 7} .col-5{grid-column:span 5}
-    .col-6{grid-column:span 6} .col-4{grid-column:span 4} .col-12{grid-column:span 12}
-    @media (max-width: 950px){ .grid{grid-template-columns:1fr} .col-7,.col-5,.col-6,.col-4,.col-12{grid-column:auto} }
 
-    /* Cards (light on dark) */
+    /* Grid helpers */
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(12,1fr)}
+    .col-12{grid-column:span 12} .col-7{grid-column:span 7} .col-5{grid-column:span 5}
+    .col-6{grid-column:span 6} .col-4{grid-column:span 4}
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} .col-12,.col-7,.col-5,.col-6,.col-4{grid-column:auto} }
+
+    /* Cards (donkere varianten, geen wit) */
     .card{
       background:var(--card); color:var(--card-ink);
-      border:1px solid #e7eaef; border-radius:var(--radius-lg); padding:22px; box-shadow:var(--shadow);
+      border:1px solid var(--line); border-radius:var(--radius-lg); padding:24px; box-shadow:var(--shadow);
     }
-    .card.dark{ background:#121519; color:var(--ink); border:1px solid var(--line) }
-    .photo{border-radius:var(--radius-lg); overflow:hidden; border:1px solid #e7eaef}
+    .card.alt{ background:var(--card-2) }
 
     /* Detail chips */
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .chip{background:var(--chip); border:1px solid #e7eaef; padding:6px 10px; border-radius:999px; font-size:13px; color:#2c323a}
+    .chip{background:var(--chip); border:1px solid var(--chip-line); padding:6px 10px; border-radius:999px; font-size:13px; color:#C9CFD8}
 
-    .list{display:flex; flex-direction:column; gap:10px}
-    .divider{height:1px; background:#e7eaef; margin:18px 0}
-
-    /* Timeline */
-    .tl{display:grid; gap:14px}
-    .tl .item{display:grid; gap:6px; padding:14px; border:1px solid #e7eaef; border-radius:14px; background:#fff}
-    .tl .when{font-weight:600; color:#2c323a}
-    .tl .what{font-weight:600}
-    .tl .where{color:#5a616b}
-
-    footer{padding:24px 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
+    .divider{height:1px; background:linear-gradient(90deg, transparent, #26303c, transparent); margin:18px 0}
+    footer{padding:26px 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="wrap nav">
-      <div class="brand"><div class="dot" aria-hidden="true"></div><span>Elke Losch</span></div>
+      <div class="brand">
+        <div class="mark" aria-hidden="true">EL</div>
+        <span>Elke Losch</span>
+      </div>
       <div class="toplinks">
         <a class="chiplink" href="#over">Over</a>
         <a class="chiplink" href="#expertise">Expertise</a>
-        <a class="chiplink" href="#cv">CV</a>
+        <a class="chiplink" href="#onderwijs">Onderwijs</a>
         <a class="btn" href="#contact">Contact</a>
       </div>
     </div>
@@ -146,24 +166,28 @@
         <a class="sidelink" href="#hero">🏠 Intro</a>
         <a class="sidelink" href="#over">Over</a>
         <a class="sidelink" href="#expertise">Expertise</a>
-        <a class="sidelink" href="#cv">CV</a>
         <a class="sidelink" href="#onderwijs">Onderwijs</a>
         <a class="sidelink" href="#contact">Contact</a>
-        <!-- Alleen e-mail, geen telefoon/whatsapp -->
+        <span class="hairline" style="margin:6px 0"></span>
         <a class="btn" href="#contact">Neem contact op</a>
       </nav>
     </aside>
 
     <!-- Main content -->
     <div>
-      <!-- HERO -->
+      <!-- HERO (foto verwijderd, full-width tekst) -->
       <section id="hero">
         <div class="grid">
-          <div class="col-7">
-            <div class="card">
-              <span class="muted" style="letter-spacing:.12em;text-transform:uppercase">Utrecht & regio</span>
-              <h1>Endodontologie & begeleiding van angstpatiënten — rustig, duidelijk en precies.</h1>
-              <p class="muted" style="font-size:17px">Ik ben <strong>Elke Losch</strong>, zelfstandig tandarts werkzaam bij <strong>twee praktijken</strong> in en rond Utrecht. Daarnaast geef ik met plezier les tandheelkunde aan de hogeschool in Utrecht. Mijn aanpak: stap-voor-stap, evidence-based en met aandacht voor comfort.</p>
+          <div class="col-12">
+            <div class="card alt">
+              <span class="eyebrow">Utrecht &amp; regio</span>
+              <h1>Endodontologie &amp; begeleiding van angstpatiënten — rustig, duidelijk en precies.</h1>
+              <p class="muted" style="font-size:17px; margin-top:8px">
+                Ik ben <strong style="color:#F3F6FA">Elke Losch</strong>, zelfstandig tandarts werkzaam bij
+                <strong style="color:#F3F6FA">twee praktijken</strong> in en rond Utrecht. Daarnaast geef ik les
+                tandheelkunde aan de hogeschool in Utrecht. Mijn aanpak: stap-voor-stap, evidence-based en met aandacht
+                voor comfort.
+              </p>
               <div class="chips">
                 <span class="chip">Wortelkanaalbehandelingen</span>
                 <span class="chip">Herbehandelingen</span>
@@ -171,14 +195,11 @@
                 <span class="chip">Samenwerking met verwijzers</span>
                 <span class="chip">NL · DE · EN</span>
               </div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px">
                 <a class="btn" href="#contact">Neem contact op</a>
                 <a class="btn ghost" href="#expertise">Lees expertise</a>
               </div>
             </div>
-          </div>
-          <div class="col-5">
-            <div class="photo"><img src="elke-losch.jpg" alt="Portret van tandarts Elke Losch"></div>
           </div>
         </div>
       </section>
@@ -189,17 +210,21 @@
           <div class="col-7">
             <div class="card">
               <h2>Over</h2>
-              <p class="muted" style="color:#4d535b">Patiënten omschrijven mij als kalm, duidelijk en precies. Ik neem de tijd om opties en stappen uit te leggen, zeker bij angst of eerdere nare ervaringen. Moderne endodontische technieken, loupe/microscoop waar nodig, en een transparant behandelplan met nazorg.</p>
+              <p class="muted" style="margin-top:6px">
+                Patiënten omschrijven mij als kalm, duidelijk en precies. Ik neem de tijd om opties en stappen uit te leggen,
+                zeker bij angst of eerdere nare ervaringen. Moderne endodontische technieken, loupe/microscoop waar nodig,
+                en een transparant behandelplan met nazorg.
+              </p>
             </div>
           </div>
           <div class="col-5">
-            <div class="card list">
-              <strong>Werkwijze in het kort</strong>
+            <div class="card alt">
+              <strong style="color:#F1F5FA">Werkwijze in het kort</strong>
               <div class="divider"></div>
-              <div>• Intake & duidelijke uitleg (verwachtingen, alternatieven)</div>
-              <div>• Pijnarme behandeling waar mogelijk; pauzes op verzoek</div>
-              <div>• Afstemming met eigen tandarts/verwijzer</div>
-              <div>• Heldere nazorginstructies</div>
+              <p class="muted">• Intake &amp; duidelijke uitleg (verwachtingen, alternatieven)</p>
+              <p class="muted">• Pijnarme behandeling waar mogelijk; pauzes op verzoek</p>
+              <p class="muted">• Afstemming met eigen tandarts/verwijzer</p>
+              <p class="muted">• Heldere nazorginstructies</p>
             </div>
           </div>
         </div>
@@ -210,104 +235,76 @@
         <h2>Expertise</h2>
         <div class="grid" style="margin-top:10px">
           <div class="col-4 card">
-            <strong>Endodontologie</strong>
-            <p class="muted" style="color:#4d535b">Diagnostiek en (her)behandeling van complexe wortelkanaalproblemen, met behoud van element als uitgangspunt.</p>
+            <strong style="color:#F1F5FA">Endodontologie</strong>
+            <div class="divider"></div>
+            <p class="muted">Diagnostiek en (her)behandeling van complexe wortelkanaalproblemen, met behoud van element als uitgangspunt.</p>
+          </div>
+          <div class="col-4 card alt">
+            <strong style="color:#F1F5FA">Angstpatiënten</strong>
+            <div class="divider"></div>
+            <p class="muted">Rustig tempo, voorspelbare stappen en keuzevrijheid. Verdoving en pauzes wanneer jij dat nodig hebt.</p>
           </div>
           <div class="col-4 card">
-            <strong>Angstpatiënten</strong>
-            <p class="muted" style="color:#4d535b">Rustig tempo, voorspelbare stappen en keuzevrijheid. Verdoving en pauzes wanneer jij dat nodig hebt.</p>
-          </div>
-          <div class="col-4 card">
-            <strong>Onderwijs & begeleiding</strong>
-            <p class="muted" style="color:#4d535b">Docent tandheelkunde in Utrecht: evidence-based, praktijkgericht en mensgericht.</p>
+            <strong style="color:#F1F5FA">Onderwijs &amp; begeleiding</strong>
+            <div class="divider"></div>
+            <p class="muted">Docent tandheelkunde in Utrecht: evidence-based, praktijkgericht en mensgericht.</p>
           </div>
         </div>
       </section>
 
-      <!-- CV -->
-      <section id="cv" class="band">
-        <h2>CV (selectie)</h2>
-        <div class="grid" style="margin-top:10px">
-          <div class="col-6">
-            <div class="card dark">
-              <strong style="display:block; margin-bottom:8px">Opleiding</strong>
-              <div class="tl">
-                <div class="item" style="background:#0e1116; border-color:#1b2027; color:#ECEFF3">
-                  <div class="when">Duitsland — Universiteit</div>
-                  <div class="what">Tandheelkunde (examen)</div>
-                  <div class="where" style="color:#A3ABB6">Grondige klinische vorming, nadruk op endodontologie en patiëntcommunicatie.</div>
-                </div>
-                <div class="item">
-                  <div class="when">Bij- en nascholing</div>
-                  <div class="what">Endodontische herbehandelingen, pijnmanagement, communicatie bij angst</div>
-                  <div class="where">Regelmatig geaccrediteerde cursussen / congressen</div>
-                </div>
-              </div>
+      <!-- ONDERWIJS -->
+      <section id="onderwijs" class="band">
+        <div class="grid">
+          <div class="col-12">
+            <div class="card alt">
+              <h2>Onderwijs</h2>
+              <p class="muted" style="margin-top:6px">
+                Als docent draag ik bij aan de volgende generatie mondzorgprofessionals. Lessen zijn praktijkgericht en
+                evidence-based, met nadruk op heldere communicatie en patiëntcomfort.
+              </p>
             </div>
-          </div>
-          <div class="col-6">
-            <div class="card">
-              <strong style="display:block; margin-bottom:8px">Werkervaring</strong>
-              <div class="tl">
-                <div class="item">
-                  <div class="when">Heden</div>
-                  <div class="what">Zelfstandig tandarts — 2 praktijken (regio Utrecht)</div>
-                  <div class="where">Endodontologie, complexe casuïstiek, begeleiding van angstpatiënten</div>
-                </div>
-                <div class="item">
-                  <div class="when">Heden</div>
-                  <div class="what">Docent tandheelkunde — Hogeschool Utrecht</div>
-                  <div class="where">Klinische vaardigheden, communicatie en patiëntgericht werken</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Onderwijs -->
-      <section id="onderwijs">
-        <h2>Onderwijs</h2>
-        <div class="grid" style="margin-top:10px">
-          <div class="col-12 card dark">
-            <p class="muted">Als docent draag ik bij aan de volgende generatie mondzorgprofessionals. Lessen zijn praktijkgericht en evidence-based, met nadruk op heldere communicatie en patiëntcomfort.</p>
           </div>
         </div>
       </section>
 
       <!-- CONTACT (alleen e-mail, volledig uitgeschreven) -->
-      <section id="contact" class="band">
-        <h2>Contact</h2>
-        <div class="grid" style="margin-top:10px">
-          <div class="col-7 card">
-            <p style="color:#0e1116; font-weight:600">E-mail</p>
-            <p class="muted" style="margin-top:6px; color:#4d535b">
-              Stuur een bericht naar: <strong>elke_losch@yahoo.de</strong>
-            </p>
-            <div class="divider"></div>
-            <div style="display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn" href="mailto:elke_losch@yahoo.de" aria-label="Stuur een e-mail">Stuur e-mail</a>
-              <button class="btn ghost" type="button" aria-label="Kopieer e-mailadres" onclick="navigator.clipboard.writeText('elke_losch@yahoo.de')">Kopieer adres</button>
+      <section id="contact">
+        <div class="grid">
+          <div class="col-7">
+            <div class="card">
+              <h2>Contact</h2>
+              <p class="muted" style="margin-top:8px">
+                Stuur een bericht naar: <strong style="color:#F1F5FA">elke_losch@yahoo.de</strong>
+              </p>
+              <div class="divider"></div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap">
+                <a class="btn" href="mailto:elke_losch@yahoo.de" aria-label="Stuur een e-mail">Stuur e-mail</a>
+                <button class="btn ghost" type="button" aria-label="Kopieer e-mailadres"
+                        onclick="navigator.clipboard.writeText('elke_losch@yahoo.de')">Kopieer adres</button>
+              </div>
             </div>
           </div>
-          <div class="col-5 card">
-            <strong style="color:#0e1116">Werkgebied & beschikbaarheid</strong>
-            <p class="muted" style="margin-top:6px; color:#4d535b">Utrecht en omgeving. Afspraken op werkdagen; tijden in overleg. Verwijzingen via je eigen tandarts zijn welkom.</p>
+          <div class="col-5">
+            <div class="card alt">
+              <strong style="color:#F1F5FA">Werkgebied &amp; beschikbaarheid</strong>
+              <div class="divider"></div>
+              <p class="muted">Utrecht en omgeving. Afspraken op werkdagen; tijden in overleg. Verwijzingen via je eigen tandarts zijn welkom.</p>
+            </div>
           </div>
         </div>
       </section>
     </div>
   </main>
 
-  <footer class="wrap" style="text-align:center; color:var(--muted); border-top:1px solid var(--line); padding-top:20px">
-    © <span id="y"></span> Elke Losch — Tandarts · Utrecht
+  <footer class="wrap" style="text-align:center; color:var(--muted); border-top:1px solid var(--line)">
+    <div style="padding:18px 0">© <span id="y"></span> Elke Losch — Tandarts · Utrecht</div>
   </footer>
 
-  <!-- Scrollspy: highlight active link in sticky sidebar -->
+  <!-- Scrollspy -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    const sections = ['hero','over','expertise','cv','onderwijs','contact']
+    const sections = ['hero','over','expertise','onderwijs','contact']
       .map(id => document.getElementById(id))
       .filter(Boolean);
 
