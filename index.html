@@ -15,27 +15,21 @@
   <style>
     :root{
       /* Monochrome premium palette (meer grijs, subtiel verschil) */
-      --bg:#0b0e12;         /* page background (near-black) */
-      --bg-soft:#11151b;    /* band background */
-      --ink:#E9EDF2;        /* hoofdtekst licht */
-      --muted:#A4ACB8;      /* secundaire tekst */
-      --line:#1a2028;       /* haarlijn op donker */
-      --line-soft:#161b22;  /* nog subtieler */
+      --bg:#0b0e12; --bg-soft:#11151b; --ink:#E9EDF2; --muted:#A4ACB8;
+      --line:#1a2028; --line-soft:#161b22;
 
-      --card:#141920;       /* card donkergrijs */
-      --card-2:#181e26;     /* card variant */
-      --card-ink:#F2F5F9;   /* tekst op cards */
-      --chip:#1b212a;       /* pill labels */
-      --chip-line:#202734;  /* rand pill labels */
+      --card:#141920;      /* card donkergrijs */
+      --card-2:#181e26;    /* card variant */
+      --card-ink:#F2F5F9;
 
-      --btn-top:#212832;    /* knop gradient boven */
-      --btn-bot:#12171d;    /* knop gradient onder */
+      --chip:#1b212a; --chip-line:#202734;
+
+      --btn-top:#212832; --btn-bot:#12171d;
 
       --shadow:0 20px 60px rgba(0,0,0,.40);
       --radius:16px; --radius-lg:22px;
       --focus:0 0 0 3px rgba(255,255,255,.14);
-      --wrap:1160px;
-      --measure:68ch;       /* ideale regellengte voor leesbare paragrafen */
+      --wrap:1160px; --measure:68ch;
     }
 
     /* Base */
@@ -87,7 +81,7 @@
     }
     .chiplink:hover{color:#fff; background:#0c1116; border-color:#212733}
 
-    /* Buttons (monochroom) */
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:10px 16px; border-radius:12px; font-weight:600; border:1px solid var(--line);
@@ -97,11 +91,11 @@
     .btn.ghost{background:transparent; color:var(--ink)}
     .btn:focus-visible{outline:none; box-shadow:var(--focus)}
 
-    /* Layout: aside + main content */
+    /* Layout */
     .layout{display:grid; grid-template-columns:280px 1fr; gap:22px}
     @media (max-width: 980px){ .layout{grid-template-columns:1fr} }
 
-    /* Sticky sidebar */
+    /* Sidebar */
     aside{
       position:sticky; top:88px; height:max-content;
       background:linear-gradient(180deg,#10141a,#0e1217);
@@ -127,49 +121,46 @@
     .col-6{grid-column:span 6} .col-4{grid-column:span 4}
     @media (max-width: 980px){ .grid{grid-template-columns:1fr} .col-12,.col-7,.col-5,.col-6,.col-4{grid-column:auto} }
 
-    /* Cards (donkere varianten, geen wit) */
-    .card{
-      background:var(--card); color:var(--card-ink);
-      border:1px solid var(--line); border-radius:var(--radius-lg); padding:24px; box-shadow:var(--shadow);
-    }
+    /* Cards (donker) */
+    .card{ background:var(--card); color:var(--card-ink); border:1px solid var(--line);
+           border-radius:var(--radius-lg); padding:24px; box-shadow:var(--shadow); }
     .card.alt{ background:var(--card-2) }
 
-    /* Detail chips */
+    /* Chips */
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
     .chip{background:var(--chip); border:1px solid var(--chip-line); padding:6px 10px; border-radius:999px; font-size:13px; color:#C9CFD8}
 
     .divider{height:1px; background:linear-gradient(90deg, transparent, #26303c, transparent); margin:18px 0}
     footer{padding:26px 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
 
-    /* === Mobile polish (telefoon) === */
+    /* CV timeline (subtiel) */
+    .cv-tl{position:relative; display:grid; gap:14px; margin-top:8px}
+    .cv-item{display:grid; grid-template-columns:140px 1fr; gap:16px; align-items:start}
+    .cv-when{color:#C9CFD8; font-weight:600}
+    .cv-what{color:#F1F5FA; font-weight:600}
+    .cv-where{color:#A4ACB8}
+    .cv-tl:before{
+      content:""; position:absolute; left:115px; top:4px; bottom:4px; width:1px; background:rgba(255,255,255,.06);
+    }
+    @media (max-width: 600px){ .cv-item{grid-template-columns:1fr} .cv-tl:before{display:none} }
+
+    .cv-preview{border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#0f1318}
+    .cv-preview img{display:block; width:100%; height:auto}
+    .cv-preview .faux{padding:14px; color:#A4ACB8; text-align:center}
+
+    /* === Mobile polish === */
     @media (max-width: 760px){
-      /* 1) Layout: 1 kolom + compactere secties */
       .layout{ grid-template-columns:1fr; gap:16px; }
       section{ padding:22px 0; }
-
-      /* 2) Sidebar: horizontale pill-navigatie */
-      aside{
-        position:static;
-        background:transparent; border:0; padding:0; box-shadow:none;
-        margin:4px 0 2px;
-      }
-      #sideNav{
-        display:flex; gap:8px; overflow-x:auto; white-space:nowrap; padding:2px 0;
-        -webkit-overflow-scrolling:touch; scrollbar-width:none;
-      }
+      aside{ position:static; background:transparent; border:0; padding:0; box-shadow:none; margin:4px 0 2px; }
+      #sideNav{ display:flex; gap:8px; overflow-x:auto; white-space:nowrap; padding:2px 0; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
       #sideNav::-webkit-scrollbar{ display:none; }
       .sidelink{ background:#0c1116; border:1px solid var(--line); color:var(--ink); }
       .sidelink.active{ background:#10141a; }
-
-      /* 3) Header: toplinks verbergen (we gebruiken de horizontale nav) */
       .toplinks{ display:none; }
-
-      /* 4) Typografie & knoppen: iets royaler tikdoel */
       h1{ font-size:clamp(28px,5.5vw,34px); }
       h2{ font-size:clamp(18px,4.8vw,24px); }
       .btn{ padding:12px 16px; }
-
-      /* 5) Cards: luchtiger rand op kleine schermen */
       .card{ border-radius:14px; padding:18px; }
     }
   </style>
@@ -185,6 +176,7 @@
       <div class="toplinks">
         <a class="chiplink" href="#over">Over</a>
         <a class="chiplink" href="#expertise">Expertise</a>
+        <a class="chiplink" href="#cv">CV</a>
         <a class="chiplink" href="#onderwijs">Onderwijs</a>
         <a class="btn" href="#contact">Contact</a>
       </div>
@@ -198,6 +190,7 @@
         <a class="sidelink" href="#hero">🏠 Intro</a>
         <a class="sidelink" href="#over">Over</a>
         <a class="sidelink" href="#expertise">Expertise</a>
+        <a class="sidelink" href="#cv">CV</a>
         <a class="sidelink" href="#onderwijs">Onderwijs</a>
         <a class="sidelink" href="#contact">Contact</a>
         <span class="hairline" style="margin:6px 0"></span>
@@ -207,7 +200,7 @@
 
     <!-- Main content -->
     <div>
-      <!-- HERO (professionelere kop, foto verwijderd) -->
+      <!-- HERO -->
       <section id="hero">
         <div class="grid">
           <div class="col-12">
@@ -217,8 +210,8 @@
               <p class="muted" style="font-size:17px; margin-top:8px">
                 Precisie, rust en heldere communicatie. Ik ben <strong style="color:#F3F6FA">Elke Losch</strong>,
                 zelfstandig tandarts actief bij <strong style="color:#F3F6FA">twee praktijken</strong> in en rond Utrecht
-                en docent tandheelkunde aan de hogeschool in Utrecht. Mijn aanpak is evidence-based en stap-voor-stap,
-                met aandacht voor comfort — ook bij angst.
+                en docent tandheelkunde aan de hogeschool in Utrecht. Evidence-based en stap-voor-stap, met aandacht
+                voor comfort — ook bij angst.
               </p>
               <div class="chips">
                 <span class="chip">Wortelkanaalbehandelingen</span>
@@ -243,9 +236,9 @@
             <div class="card">
               <h2>Over</h2>
               <p class="muted" style="margin-top:6px">
-                Patiënten omschrijven mij als kalm, duidelijk en precies. Ik neem de tijd om opties en stappen uit te leggen,
-                zeker bij angst of eerdere nare ervaringen. Moderne endodontische technieken, loupe/microscoop waar nodig,
-                en een transparant behandelplan met nazorg.
+                Kalm, duidelijk en precies. Ik neem de tijd om opties en stappen uit te leggen, zeker bij angst of eerdere
+                nare ervaringen. Moderne endodontische technieken, loupe/microscoop waar nodig, en een transparant
+                behandelplan met nazorg.
               </p>
             </div>
           </div>
@@ -284,8 +277,106 @@
         </div>
       </section>
 
+      <!-- CV (subtiel) -->
+      <section id="cv" class="band">
+        <div class="grid">
+          <div class="col-7">
+            <div class="card">
+              <h2>CV</h2>
+              <p class="muted" style="margin-top:6px">Laatst bijgewerkt: september 2025 — werkzaamheden ongewijzigd t.o.v. 2023.</p>
+              <div class="divider"></div>
+              <div class="cv-tl">
+                <div class="cv-item">
+                  <div class="cv-when">10/2022 – Heden</div>
+                  <div>
+                    <div class="cv-what">Implantologie Odijk — Tandarts</div>
+                    <div class="cv-where">Algemene tandheelkunde; endodontische casuïstiek.</div>
+                  </div>
+                </div>
+                <div class="cv-item">
+                  <div class="cv-when">09/2022 – Heden</div>
+                  <div>
+                    <div class="cv-what">Hogeschool Utrecht — Docent mondzorgkunde</div>
+                    <div class="cv-where">Klinische vaardigheden, communicatie en patiëntgericht werken.</div>
+                  </div>
+                </div>
+                <div class="cv-item">
+                  <div class="cv-when">07/2012 – Heden</div>
+                  <div>
+                    <div class="cv-what">Staalwijk Tandartspraktijk — Tandarts (endodontologie)</div>
+                    <div class="cv-where">Diagnostiek, (her)behandeling en samenwerking met verwijzers.</div>
+                  </div>
+                </div>
+                <div class="cv-item">
+                  <div class="cv-when">2011 – 2012</div>
+                  <div>
+                    <div class="cv-what">SanaCaregroep B.V. — Tandarts</div>
+                    <div class="cv-where">Tandheelkundige behandelingen.</div>
+                  </div>
+                </div>
+                <div class="cv-item">
+                  <div class="cv-when">2010</div>
+                  <div>
+                    <div class="cv-what">T-Clinics — Tandarts</div>
+                    <div class="cv-where">Tandheelkundige behandelingen.</div>
+                  </div>
+                </div>
+                <div class="cv-item">
+                  <div class="cv-when">2007 – 2009</div>
+                  <div>
+                    <div class="cv-what">Duitsland — diverse praktijken (Berlijn, Emsdetten)</div>
+                    <div class="cv-where">Algemene tandheelkunde.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+              <strong style="color:#F1F5FA">Opleiding</strong>
+              <div class="cv-tl" style="margin-top:10px">
+                <div class="cv-item">
+                  <div class="cv-when">05/2011 – 03/2012</div>
+                  <div>
+                    <div class="cv-what">Master Endodontologie — Münster (Duitsland)</div>
+                    <div class="cv-where">Diploma behaald.</div>
+                  </div>
+                </div>
+                <div class="cv-item">
+                  <div class="cv-when">2001 – 2007</div>
+                  <div>
+                    <div class="cv-what">Tandheelkunde — Christian-Albrechts-Universität Kiel (Duitsland)</div>
+                    <div class="cv-where">Diploma behaald.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+              <strong style="color:#F1F5FA">Vaardigheden</strong>
+              <p class="muted" style="margin-top:8px">Communicatief vaardig · Oplossingsgericht · Flexibel</p>
+            </div>
+          </div>
+
+          <div class="col-5">
+            <div class="card alt">
+              <strong style="color:#F1F5FA">CV-document</strong>
+              <p class="muted" style="margin-top:6px">Volledige CV als document.</p>
+
+              <!-- Optionele preview (plaats 'cv-elke.jpg' in de root; verdwijnt automatisch als die er niet is) -->
+              <div class="cv-preview" id="cvPrev">
+                <img src="cv-elke.jpg" alt="Voorbeeld van het CV" onerror="this.closest('#cvPrev').style.display='none'">
+                <div class="faux">Voorbeeldweergave</div>
+              </div>
+
+              <div class="divider"></div>
+              <!-- Gebruik een nette bestandsnaam zonder spaties -->
+              <a class="btn" href="cv-elke.docx" download>Download CV (DOCX)</a>
+              <a class="btn ghost" href="#contact">Vragen of referenties? Mail mij</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ONDERWIJS -->
-      <section id="onderwijs" class="band">
+      <section id="onderwijs">
         <div class="grid">
           <div class="col-12">
             <div class="card alt">
@@ -299,8 +390,8 @@
         </div>
       </section>
 
-      <!-- CONTACT (alleen e-mail, volledig uitgeschreven) -->
-      <section id="contact">
+      <!-- CONTACT -->
+      <section id="contact" class="band">
         <div class="grid">
           <div class="col-7">
             <div class="card">
@@ -335,26 +426,15 @@
   <!-- Scrollspy -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    const sections = ['hero','over','expertise','onderwijs','contact']
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
-
+    const sections = ['hero','over','expertise','cv','onderwijs','contact'].map(id => document.getElementById(id)).filter(Boolean);
     const links = Array.from(document.querySelectorAll('#sideNav .sidelink'));
     const byId = id => links.find(a => a.getAttribute('href') === '#' + id);
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        const id = entry.target.id;
-        const link = byId(id);
-        if (!link) return;
-        if (entry.isIntersecting) {
-          links.forEach(a => a.classList.remove('active'));
-          link.classList.add('active');
-        }
+        const id = entry.target.id; const link = byId(id); if (!link) return;
+        if (entry.isIntersecting) { links.forEach(a => a.classList.remove('active')); link.classList.add('active'); }
       });
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0.01 });
-
     sections.forEach(sec => observer.observe(sec));
   </script>
 </body>
