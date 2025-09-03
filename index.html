@@ -113,10 +113,6 @@
     .cv-tl:before{content:""; position:absolute; left:155px; top:6px; bottom:6px; width:1px; background:rgba(255,255,255,.06)}
     @media (max-width: 700px){ .cv-item{grid-template-columns:1fr} .cv-tl:before{display:none} }
 
-    .cv-preview{border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#0f1318}
-    .cv-preview img{display:block; width:100%; height:auto}
-    .cv-preview .faux{padding:14px; color:#A4ACB8; text-align:center}
-
     /* Motion respect */
     @media (prefers-reduced-motion: reduce){
       .btn,.card{transition:none}
@@ -143,7 +139,7 @@
       @page{ margin:18mm }
       *{ box-shadow:none !important; text-shadow:none !important }
       body{ background:#fff; color:#111; font-size:12pt }
-      header, aside, .toplinks, .chips, .btn, .cv-preview, .band{ display:none !important }
+      header, aside, .toplinks, .chips, .btn, .band{ display:none !important }
       .wrap{ max-width:none; padding:0 }
       .card, .card.alt{ background:#fff; color:#111; border:0; padding:0 }
       h1,h2{ color:#000 }
@@ -265,21 +261,28 @@
         </div>
       </section>
 
-      <!-- CV (breder, NL-maanden, PDF-knop) -->
+      <!-- CV (volledig uitgeschreven, volle breedte) -->
       <section id="cv" class="band">
         <div class="grid">
-          <div class="col-8">
+          <div class="col-12">
             <div class="card">
               <h2>CV</h2>
               <p class="muted" style="margin-top:6px">Laatst bijgewerkt: september 2025 — werkzaamheden ongewijzigd t.o.v. 2023.</p>
               <div class="divider"></div>
 
-              <div class="cv-tl">
+              <strong style="color:#F1F5FA">Profiel</strong>
+              <p class="muted" style="margin-top:8px">
+                Ik heb een hoog energieniveau en werk graag met ambitieuze collega’s samen om een optimaal resultaat te bereiken.
+              </p>
+
+              <div class="divider"></div>
+              <strong style="color:#F1F5FA">Werkervaring</strong>
+              <div class="cv-tl" style="margin-top:10px">
                 <div class="cv-item">
                   <div class="cv-when">oktober 2022 – heden</div>
                   <div>
                     <div class="cv-what">Implantologie Odijk — Tandarts</div>
-                    <div class="cv-where">Algemene tandheelkunde; endodontische casuïstiek.</div>
+                    <div class="cv-where">Tandheelkundige behandelingen; endodontische casuïstiek.</div>
                   </div>
                 </div>
                 <div class="cv-item">
@@ -297,21 +300,21 @@
                   </div>
                 </div>
                 <div class="cv-item">
-                  <div class="cv-when">2011 – 2012</div>
+                  <div class="cv-when">januari 2011 – april 2012</div>
                   <div>
                     <div class="cv-what">SanaCaregroep B.V. — Tandarts</div>
                     <div class="cv-where">Tandheelkundige behandelingen.</div>
                   </div>
                 </div>
                 <div class="cv-item">
-                  <div class="cv-when">2010</div>
+                  <div class="cv-when">februari 2010 – december 2010</div>
                   <div>
                     <div class="cv-what">T-Clinics — Tandarts</div>
                     <div class="cv-where">Tandheelkundige behandelingen.</div>
                   </div>
                 </div>
                 <div class="cv-item">
-                  <div class="cv-when">2007 – 2009</div>
+                  <div class="cv-when">augustus 2007 – december 2009</div>
                   <div>
                     <div class="cv-what">Duitsland — diverse praktijken (Berlijn, Emsdetten)</div>
                     <div class="cv-where">Algemene tandheelkunde.</div>
@@ -337,26 +340,10 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Utility kolom -->
-          <div class="col-4">
-            <div class="card alt">
-              <strong style="color:#F1F5FA">CV-document</strong>
-              <p class="muted" style="margin-top:6px">Volledige CV als document.</p>
-
-              <div class="cv-preview" id="cvPrev">
-                <img src="cv-elke.jpg" alt="Voorbeeld van het CV" onerror="this.closest('#cvPrev').style.display='none'">
-                <div class="faux">Voorbeeldweergave</div>
-              </div>
 
               <div class="divider"></div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap">
-                <a class="btn" href="cv-elke.docx" download>Download CV (DOCX)</a>
-                <button class="btn ghost" type="button" onclick="window.print()">Download als PDF</button>
-              </div>
-              <p class="muted" style="margin-top:6px">PDF gebruikt een speciaal print-ontwerp (schoon, wit, zonder navigatie).</p>
+              <strong style="color:#F1F5FA">Vaardigheden</strong>
+              <p class="muted" style="margin-top:8px">Communicatief vaardig · Oplossingsgericht · Flexibel</p>
             </div>
           </div>
         </div>
