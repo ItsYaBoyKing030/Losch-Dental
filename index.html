@@ -1,52 +1,102 @@
 <!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Elke Losch — Tandarts Endodontologie (Utrecht)</title>
-  <meta name="description" content="Informele, professionele profielpagina van tandarts Elke Losch (regio Utrecht). Specialisme endodontologie en begeleiding van angstpatiënten.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elke Losch — Tandarts Endodontologie · Utrecht</title>
+  <meta name="description" content="Tandarts Elke Losch (Utrecht). Endodontologie en begeleiding van angstpatiënten. Werkzaam als zelfstandige in twee praktijken en docent tandheelkunde in Utrecht." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0b1220;color:#e5e7eb}
-    header{background:#111827;padding:20px;text-align:center;font-weight:700}
-    .hero{padding:40px;text-align:center}
-    .hero img{max-width:220px;border-radius:16px;margin-bottom:20px}
-    .hero h1{font-size:32px;margin:0 0 10px}
-    .hero p{max-width:600px;margin:0 auto 20px;color:#9ca3af}
-    .section{padding:20px 40px;max-width:800px;margin:auto}
-    h2{margin-top:0}
-    footer{padding:20px;text-align:center;color:#9ca3af;font-size:14px}
+    :root{
+      --bg:#f7f8fa; --ink:#0f172a; --muted:#5b6575; --line:#e7eaf0;
+      --brand:#2b6cb0; --brand-2:#3182ce; --chip:#eef2f7;
+      --card:#ffffff; --shadow:0 8px 28px rgba(15,23,42,.06);
+      --radius:16px; --whatsapp:#25D366;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink)}
+    img{max-width:100%;display:block}
+    a{color:var(--brand);text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800}
+    .dot{width:24px;height:24px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:600;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#fff}
+    .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+    .btn.whatsapp{background:var(--whatsapp);color:#fff}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:36px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    h1{margin:0 0 10px;font-size:clamp(26px,3.8vw,40px);line-height:1.1}
+    p.lead{color:var(--muted);font-size:clamp(16px,2.3vw,18px);margin:0}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+    .chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:14px;color:#364152}
+    section{padding:14px 0}
+    h2{margin:0 0 8px;font-size:clamp(20px,3vw,26px)}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .muted{color:var(--muted)}
+    footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;padding:24px 0;margin-top:28px}
+    @media (max-width: 880px){ .hero{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
-  <header>Elke Losch — Tandarts (Utrecht)</header>
-  <section class="hero">
-    <img src="elke-losch.jpg" alt="Portret van tandarts Elke Losch">
-    <h1>Welkom! Ik ben Elke Losch</h1>
-    <p>Tandarts in Utrecht, gespecialiseerd in endodontologie en begeleiding van angstpatiënten.
-       Ik werk zelfstandig in twee praktijken en geef daarnaast les tandheelkunde aan de hogeschool in Utrecht.</p>
-  </section>
+  <header>
+    <div class="wrap nav">
+      <div class="logo"><div class="dot"></div> <span>Elke Losch</span></div>
+      <nav style="display:flex;gap:10px">
+        <a class="btn ghost" href="#over">Over</a>
+        <a class="btn ghost" href="#specialismen">Specialismen</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <section class="section">
-    <h2>Specialismen</h2>
-    <ul>
-      <li>Endodontologie (wortelkanaalbehandelingen)</li>
-      <li>Begeleiding van angstpatiënten</li>
-      <li>Onderwijs tandheelkunde</li>
-    </ul>
-  </section>
+  <main class="wrap">
+    <section class="hero">
+      <div class="card">
+        <h1>Tandarts in Utrecht met focus op endodontologie & angstpatiënten</h1>
+        <p class="lead">Ik ben <strong>Elke Losch</strong>, zelfstandig werkzaam bij <strong>twee praktijken</strong> in de regio Utrecht. Daarnaast geef ik met plezier les tandheelkunde aan de hogeschool in Utrecht. Rustig, duidelijk en precies — met aandacht voor comfort en resultaat.</p>
+        <div class="chips">
+          <span class="chip">Endodontologie (wortelkanaal)</span>
+          <span class="chip">Begeleiding angstpatiënten</span>
+          <span class="chip">Samenwerking met verwijzers</span>
+          <span class="chip">NL · DE · EN</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#contact">Afspraak plannen</a>
+          <a class="btn ghost" href="#ervaring">Ervaring</a>
+        </div>
+      </div>
+      <div class="card"><img src="elke-losch.jpg" alt="Portret van tandarts Elke Losch" /></div>
+    </section>
 
-  <section class="section">
-    <h2>Contact</h2>
-    <p><strong>Naam:</strong> Elke Losch</p>
-    <p><strong>Telefoon:</strong> <a href="tel:+31648141864">+31 6 48 14 18 64</a></p>
-    <p><strong>E-mail:</strong> <a href="mailto:elke_losch@yahoo.de">elke_losch@yahoo.de</a></p>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card">
+          <p><strong>Elke Losch</strong></p>
+          <p>📞 <a href="tel:+31648141864">+31 6 48 14 18 64</a><br/>
+             ✉️ <a href="mailto:elke_losch@yahoo.de">elke_losch@yahoo.de</a></p>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn whatsapp" href="https://wa.me/31648141864" target="_blank">WhatsApp</a>
+            <a class="btn ghost" href="mailto:elke_losch@yahoo.de">E-mail</a>
+          </div>
+          <p class="muted" style="margin-top:10px">WhatsApp of sms heeft mijn voorkeur. Ik reageer zo snel mogelijk.</p>
+        </div>
+        <div class="card">
+          <p class="muted">Werkgebied: Utrecht en omgeving. Afspraken en verwijzingen in overleg.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <footer>© <span id="year"></span> Elke Losch — Alle rechten voorbehouden.
-    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <footer>
+    <div class="wrap">© <span id="y"></span> Elke Losch — Tandarts · Utrecht</div>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </footer>
 </body>
 </html>
+
