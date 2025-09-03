@@ -1,40 +1,152 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="utf-8">
-  <title>Losch Dental</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elke Losch — Tandarts Endodontologie (Utrecht)</title>
+  <meta name="description" content="Informele, professionele profielpagina van tandarts Elke Losch (regio Utrecht). Specialisme endodontologie en begeleiding van angstpatiënten.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
   <style>
-    body { margin:0; font-family:Arial, sans-serif; background:#f8fafc; color:#1f2937; }
-    header { background:#2563eb; color:white; padding:20px; text-align:center; }
-    header h1 { margin:0; font-size:2rem; }
-    nav a { color:white; margin:0 10px; text-decoration:none; font-weight:bold; }
-    .hero { padding:80px 20px; text-align:center; }
-    .hero h2 { font-size:2.5rem; margin-bottom:10px; }
-    .hero p { font-size:1.2rem; color:#4b5563; }
-    .btn { display:inline-block; margin-top:20px; padding:12px 24px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; }
-    footer { background:#111827; color:#9ca3af; text-align:center; padding:20px; margin-top:40px; }
+    :root{
+      --bg:#0b1220; --card:#0f172a; --text:#e5e7eb; --muted:#9ca3af; --brand:#3b82f6; --brand-2:#06b6d4;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+         background:linear-gradient(180deg,#0b1220 0%,#0f172a 100%); color:var(--text)}
+    a{color:inherit}
+    img{max-width:100%; display:block}
+    .container{max-width:1100px; margin:0 auto; padding:20px}
+    header{position:sticky; top:0; background:rgba(15,23,42,.6); backdrop-filter:blur(8px);
+            border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .logo{width:28px; height:28px; border-radius:10px; background:linear-gradient(135deg,#3b82f6,#06b6d4)}
+    .btn{padding:12px 18px; border-radius:14px; font-weight:600;
+         background:linear-gradient(90deg,#3b82f6,#06b6d4); color:white; text-decoration:none}
+    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,.2)}
+    .hero{display:grid; gap:28px; grid-template-columns:1.1fr .9fr; align-items:center; padding:56px 20px}
+    .hero h1{margin:0; font-size:clamp(28px,5vw,44px); line-height:1.1; font-weight:800}
+    .hero p{color:var(--muted); font-size:clamp(16px,2.2vw,18px)}
+    .card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:20px}
+    .photo{border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 4px}
+    .chip{padding:8px 12px; background:rgba(255,255,255,.06); border-radius:999px; font-size:14px}
+    h2{font-size:clamp(22px,3.5vw,28px); margin:0 0 10px 0}
+    section{padding:26px 20px}
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .muted{color:var(--muted)}
+    footer{padding:40px 20px; text-align:center; color:var(--muted); font-size:14px}
+    .contact{display:flex; flex-direction:column; gap:10px}
+    .contact a{display:inline-flex; align-items:center; gap:10px; text-decoration:none; padding:10px 14px;
+               border-radius:12px; border:1px solid rgba(255,255,255,.12)}
+    .kicker{font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#93c5fd}
+    @media (max-width: 880px){ .hero{grid-template-columns:1fr; padding-top:28px} }
   </style>
 </head>
 <body>
   <header>
-    <h1>Losch Dental</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo"></div>
+        <span>Elke Losch</span>
+      </div>
+      <nav style="display:flex; gap:14px">
+        <a class="btn ghost" href="#over">Over</a>
+        <a class="btn ghost" href="#specialismen">Specialismen</a>
+        <a class="btn" href="#contact">Afspraak / Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Welcome to Losch Dental</h2>
-    <p>Modern dentistry for a healthy, confident smile.</p>
-    <a href="#contact" class="btn">Book an Appointment</a>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <span class="kicker">Regio Utrecht</span>
+        <h1>Tandarts met focus op <span style="background:linear-gradient(90deg,#3b82f6,#06b6d4);
+            -webkit-background-clip:text; background-clip:text; color:transparent">endodontologie</span> en begeleiding van angstpatiënten.</h1>
+        <p>Ik ben <strong>Elke Losch</strong>, zelfstandig tandarts werkzaam bij <strong>twee verschillende praktijken</strong> in en rond Utrecht. Daarnaast geef ik met veel plezier les in tandheelkunde aan de hogeschool in Utrecht.</p>
+        <div class="chips">
+          <span class="chip">Endodontologie (wortelkanaalbehandelingen)</span>
+          <span class="chip">Angstpatiënten: rustig & stap-voor-stap</span>
+          <span class="chip">Samenwerken met verwijzers</span>
+          <span class="chip">Nederlands / Duits / Engels</span>
+        </div>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn" href="#contact">Plan een afspraak</a>
+          <a class="btn ghost" href="#ervaring">Ervaring</a>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="elke-losch.jpg" alt="Portret van tandarts Elke Losch" loading="eager">
+      </div>
+    </section>
+
+    <section id="over">
+      <div class="grid">
+        <div class="card">
+          <h2>Over Elke</h2>
+          <p class="muted">Patiënten omschrijven mij als rustig, duidelijk en precies. Ik neem graag de tijd om uit te leggen wat we doen en waarom, zeker bij angst of eerdere nare ervaringen. Mijn doel: behandeling op maat, met een kalm gevoel in de stoel en een duurzaam resultaat.</p>
+        </div>
+        <div class="card">
+          <h2>Werkwijze</h2>
+          <p class="muted">Heldere uitleg, voorspelbare stappen en pijnvrije behandeling waar mogelijk. In overleg met jouw eigen tandarts of verwijzer. Moderne endodontische technieken en loupe-/microscoopwerk wanneer nodig.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="specialismen">
+      <h2>Specialismen</h2>
+      <div class="grid" style="margin-top:10px">
+        <div class="card">
+          <strong>Endodontologie</strong>
+          <p class="muted">Diagnostiek, herbehandelingen en complexe wortelkanaaltherapie met oog voor behoud van element en weefsel.</p>
+        </div>
+        <div class="card">
+          <strong>Angstpatiënten</strong>
+          <p class="muted">Rustig tempo, duidelijke communicatie en keuzevrijheid. Verdoving en pauzes wanneer jij dat nodig hebt.</p>
+        </div>
+        <div class="card">
+          <strong>Onderwijs</strong>
+          <p class="muted">Docent tandheelkunde aan de hogeschool in Utrecht — up-to-date, evidence-based en praktijkgericht.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ervaring">
+      <h2>Ervaring & huidige werk</h2>
+      <div class="grid" style="margin-top:10px">
+        <div class="card">
+          <strong>Zelfstandig tandarts</strong>
+          <p class="muted">Actief bij <em>twee verschillende praktijken</em> in de regio Utrecht. Beschikbaar in overleg en op verwijzing.</p>
+        </div>
+        <div class="card">
+          <strong>Docent tandheelkunde</strong>
+          <p class="muted">Lesgeven aan de hogeschool in Utrecht. Begeleiding van studenten in klinische vaardigheden en communicatie.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid" style="margin-top:10px">
+        <div class="card contact">
+          <a href="tel:+31648141864">📞 <strong>+31 6 48 14 18 64</strong></a>
+          <a href="mailto:elke_losch@yahoo.de">✉️ <strong>elke_losch@yahoo.de</strong></a>
+          <div class="muted">Voorkeur voor WhatsApp of sms? Stuur gerust een bericht; ik reageer zo snel mogelijk.</div>
+        </div>
+        <div class="card">
+          <strong>Beschikbaarheid</strong>
+          <p class="muted">Werkzaam in Utrecht en omgeving. Afspraken in overleg via telefoon of e-mail. Verwijzingen van je eigen tandarts zijn welkom.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2024 Losch Dental — All rights reserved</p>
+    © <span id="year"></span> Elke Losch — Tandarts (Utrecht). Alle rechten voorbehouden.
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   </footer>
 </body>
 </html>
-
