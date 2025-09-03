@@ -4,20 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elke Losch — Tandarts Endodontologie · Utrecht</title>
-  <meta name="description" content="Professioneel CV-profiel van tandarts Elke Losch (Utrecht). Endodontologie, begeleiding van angstpatiënten. Opleiding in Duitsland. Zelfstandig in twee praktijken en docent tandheelkunde." />
+  <meta name="description" content="CV-profiel van tandarts Elke Losch (Utrecht). Endodontologie en begeleiding van angstpatiënten. Opleiding in Duitsland. Zelfstandig in twee praktijken en docent tandheelkunde." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Dark premium palette */
-      --bg:#0f172a; --bg-soft:#111827; --ink:#e5e7eb; --muted:#9ca3af; --line:#1f2937;
-      --card:#ffffff; --card-ink:#0f172a; --chip:#eef2f7;
-      --brand:#06b6d4; --brand-2:#3b82f6; --whatsapp:#25D366;
+      /* Monochrome premium palette */
+      --bg:#0e1116;         /* page background (near-black) */
+      --bg-soft:#121519;    /* dark band */
+      --ink:#ECEFF3;        /* main light text */
+      --muted:#A3ABB6;      /* secondary text */
+      --line:#1b2027;       /* borders on dark */
+      --card:#ffffff;       /* cards on dark */
+      --card-ink:#0e1116;   /* text on cards */
+      --chip:#f3f4f6;       /* pill labels */
+      --brand:#181c22;      /* grayscale button grad (top) */
+      --brand-2:#0d1117;    /* grayscale button grad (bottom) */
       --shadow:0 18px 60px rgba(0,0,0,.35);
       --radius:16px; --radius-lg:22px;
-      --focus:0 0 0 3px rgba(6,182,212,.35);
+      --focus:0 0 0 3px rgba(255,255,255,.16);
       --wrap:1180px;
     }
 
@@ -26,39 +33,41 @@
     body{
       margin:0;
       background:
-        radial-gradient(80% 50% at 10% 0%, rgba(59,130,246,.18), transparent 60%),
-        radial-gradient(70% 50% at 100% 0%, rgba(6,182,212,.18), transparent 60%),
+        radial-gradient(70% 60% at 10% 0%, rgba(255,255,255,.06), transparent 60%),
+        radial-gradient(60% 50% at 100% 0%, rgba(255,255,255,.04), transparent 60%),
         var(--bg);
       color:var(--ink);
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
       scroll-behavior:smooth;
     }
+    ::selection{background:#222831;color:#fff}
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
     .wrap{max-width:var(--wrap); margin:0 auto; padding:20px}
 
-    /* Header (mobile) */
+    /* Header */
     header{
       position:sticky; top:0; z-index:60;
       backdrop-filter:blur(10px);
-      background:rgba(17,24,39,.75);
+      background:rgba(16,19,24,.75);
       border-bottom:1px solid var(--line);
     }
     .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800}
-    .dot{width:22px; height:22px; border-radius:8px; background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
+    .dot{width:22px; height:22px; border-radius:8px; background:linear-gradient(135deg,#2a2f36,#0c0f13)}
     .toplinks{display:flex; gap:8px}
-    .chiplink{padding:8px 12px; border-radius:12px; border:1px solid #1f2937; color:var(--muted)}
-    .chiplink:hover{color:#fff; background:#0b1220}
+    .chiplink{padding:8px 12px; border-radius:12px; border:1px solid #1f252d; color:var(--muted)}
+    .chiplink:hover{color:#fff; background:#0b0f14}
 
+    /* Buttons (monochrome) */
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:10px 16px; border-radius:12px; font-weight:600; border:1px solid #1f2937;
-      background:linear-gradient(180deg,#0b1220,#0a101e); color:#e5e7eb;
+      padding:10px 16px; border-radius:12px; font-weight:600; border:1px solid #1f252d;
+      background:linear-gradient(180deg,var(--brand),var(--brand-2)); color:#f3f4f6;
+      box-shadow:0 8px 22px rgba(0,0,0,.35);
     }
-    .btn.primary{border-color:transparent; background:linear-gradient(90deg,var(--brand),var(--brand-2)); color:#fff; box-shadow:0 12px 28px rgba(59,130,246,.25)}
-    .btn.whatsapp{background:var(--whatsapp); color:#0b1410; border-color:transparent}
+    .btn.ghost{background:transparent; color:var(--ink)}
     .btn:focus-visible{outline:none; box-shadow:var(--focus)}
 
     /* Layout: aside + main content */
@@ -75,16 +84,16 @@
     .sidelink{
       display:flex; align-items:center; gap:10px; padding:10px 12px;
       border-radius:12px; color:var(--muted);
-      border:1px solid transparent;
+      border:1px solid transparent; letter-spacing:.2px;
     }
-    .sidelink:hover{background:#0b1220; color:#fff; border-color:#1f2937}
-    .sidelink.active{background:#0b1220; color:#fff; border-color:#1f2937}
+    .sidelink:hover{background:#0b0f14; color:#fff; border-color:#1f252d}
+    .sidelink.active{background:#0b0f14; color:#fff; border-color:#1f252d}
 
     /* Sections */
     section{padding:28px 0}
     .band{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-    h1{margin:0 0 12px; font-size:clamp(28px,4vw,40px); line-height:1.12; font-weight:800}
-    h2{margin:0 0 10px; font-size:clamp(20px,3vw,26px)}
+    h1{margin:0 0 12px; font-size:clamp(28px,4vw,40px); line-height:1.12; font-weight:800; letter-spacing:.1px}
+    h2{margin:0 0 10px; font-size:clamp(20px,3vw,26px); letter-spacing:.2px}
     p{margin:0} .muted{color:var(--muted)}
     .grid{display:grid; gap:16px; grid-template-columns:repeat(12,1fr)}
     .col-7{grid-column:span 7} .col-5{grid-column:span 5}
@@ -94,29 +103,30 @@
     /* Cards (light on dark) */
     .card{
       background:var(--card); color:var(--card-ink);
-      border:1px solid #e6e8ee; border-radius:var(--radius-lg); padding:22px; box-shadow:var(--shadow);
+      border:1px solid #e7eaef; border-radius:var(--radius-lg); padding:22px; box-shadow:var(--shadow);
     }
-    .card.dark{ background:#121826; color:var(--ink); border:1px solid var(--line) }
-    .photo{border-radius:var(--radius-lg); overflow:hidden; border:1px solid #e6e8ee}
+    .card.dark{ background:#121519; color:var(--ink); border:1px solid var(--line) }
+    .photo{border-radius:var(--radius-lg); overflow:hidden; border:1px solid #e7eaef}
 
+    /* Detail chips */
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .chip{background:var(--chip); border:1px solid #e6e8ee; padding:6px 10px; border-radius:999px; font-size:13px; color:#374151}
+    .chip{background:var(--chip); border:1px solid #e7eaef; padding:6px 10px; border-radius:999px; font-size:13px; color:#2c323a}
 
     .list{display:flex; flex-direction:column; gap:10px}
-    .divider{height:1px; background:#e6e8ee; margin:18px 0}
+    .divider{height:1px; background:#e7eaef; margin:18px 0}
 
     /* Timeline */
     .tl{display:grid; gap:14px}
-    .tl .item{display:grid; gap:6px; padding:14px; border:1px solid #e6e8ee; border-radius:14px; background:#fff}
-    .tl .when{font-weight:600; color:#334155}
+    .tl .item{display:grid; gap:6px; padding:14px; border:1px solid #e7eaef; border-radius:14px; background:#fff}
+    .tl .when{font-weight:600; color:#2c323a}
     .tl .what{font-weight:600}
-    .tl .where{color:#475569}
+    .tl .where{color:#5a616b}
 
     footer{padding:24px 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
   </style>
 </head>
 <body>
-  <!-- Header (mobile quick links) -->
+  <!-- Header -->
   <header>
     <div class="wrap nav">
       <div class="brand"><div class="dot" aria-hidden="true"></div><span>Elke Losch</span></div>
@@ -124,13 +134,13 @@
         <a class="chiplink" href="#over">Over</a>
         <a class="chiplink" href="#expertise">Expertise</a>
         <a class="chiplink" href="#cv">CV</a>
-        <a class="btn primary" href="#contact">Contact</a>
+        <a class="btn" href="#contact">Contact</a>
       </div>
     </div>
   </header>
 
   <main class="wrap layout">
-    <!-- Sticky sidebar (desktop) -->
+    <!-- Sticky sidebar -->
     <aside aria-label="Sectienavigatie">
       <nav class="sideblock" id="sideNav">
         <a class="sidelink" href="#hero">🏠 Intro</a>
@@ -139,8 +149,8 @@
         <a class="sidelink" href="#cv">CV</a>
         <a class="sidelink" href="#onderwijs">Onderwijs</a>
         <a class="sidelink" href="#contact">Contact</a>
-        <a class="btn primary" href="#contact">Plan afspraak</a>
-        <a class="btn whatsapp" href="https://wa.me/31648141864" target="_blank" rel="noopener">WhatsApp</a>
+        <!-- Alleen e-mail, geen telefoon/whatsapp -->
+        <a class="btn" href="#contact">Neem contact op</a>
       </nav>
     </aside>
 
@@ -162,8 +172,8 @@
                 <span class="chip">NL · DE · EN</span>
               </div>
               <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
-                <a class="btn primary" href="#contact">Plan afspraak</a>
-                <a class="btn" href="#expertise">Lees expertise</a>
+                <a class="btn" href="#contact">Neem contact op</a>
+                <a class="btn ghost" href="#expertise">Lees expertise</a>
               </div>
             </div>
           </div>
@@ -179,7 +189,7 @@
           <div class="col-7">
             <div class="card">
               <h2>Over</h2>
-              <p class="muted" style="color:#4b5563">Patiënten omschrijven mij als kalm, duidelijk en precies. Ik neem de tijd om opties en stappen uit te leggen, zeker bij angst of eerdere nare ervaringen. Moderne endodontische technieken, loupe/microscoop waar nodig, en een transparant behandelplan met nazorg.</p>
+              <p class="muted" style="color:#4d535b">Patiënten omschrijven mij als kalm, duidelijk en precies. Ik neem de tijd om opties en stappen uit te leggen, zeker bij angst of eerdere nare ervaringen. Moderne endodontische technieken, loupe/microscoop waar nodig, en een transparant behandelplan met nazorg.</p>
             </div>
           </div>
           <div class="col-5">
@@ -201,15 +211,15 @@
         <div class="grid" style="margin-top:10px">
           <div class="col-4 card">
             <strong>Endodontologie</strong>
-            <p class="muted" style="color:#4b5563">Diagnostiek en (her)behandeling van complexe wortelkanaalproblemen, met behoud van element als uitgangspunt.</p>
+            <p class="muted" style="color:#4d535b">Diagnostiek en (her)behandeling van complexe wortelkanaalproblemen, met behoud van element als uitgangspunt.</p>
           </div>
           <div class="col-4 card">
             <strong>Angstpatiënten</strong>
-            <p class="muted" style="color:#4b5563">Rustig tempo, voorspelbare stappen en keuzevrijheid. Verdoving en pauzes wanneer jij dat nodig hebt.</p>
+            <p class="muted" style="color:#4d535b">Rustig tempo, voorspelbare stappen en keuzevrijheid. Verdoving en pauzes wanneer jij dat nodig hebt.</p>
           </div>
           <div class="col-4 card">
             <strong>Onderwijs & begeleiding</strong>
-            <p class="muted" style="color:#4b5563">Docent tandheelkunde in Utrecht: evidence-based, praktijkgericht en mensgericht.</p>
+            <p class="muted" style="color:#4d535b">Docent tandheelkunde in Utrecht: evidence-based, praktijkgericht en mensgericht.</p>
           </div>
         </div>
       </section>
@@ -222,10 +232,10 @@
             <div class="card dark">
               <strong style="display:block; margin-bottom:8px">Opleiding</strong>
               <div class="tl">
-                <div class="item" style="background:#0f172a; border-color:#1f2937; color:#e5e7eb">
+                <div class="item" style="background:#0e1116; border-color:#1b2027; color:#ECEFF3">
                   <div class="when">Duitsland — Universiteit</div>
                   <div class="what">Tandheelkunde (examen)</div>
-                  <div class="where muted" style="color:#9ca3af">Grondige klinische vorming, nadruk op endodontologie en patiëntcommunicatie.</div>
+                  <div class="where" style="color:#A3ABB6">Grondige klinische vorming, nadruk op endodontologie en patiëntcommunicatie.</div>
                 </div>
                 <div class="item">
                   <div class="when">Bij- en nascholing</div>
@@ -265,24 +275,24 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
+      <!-- CONTACT (alleen e-mail, volledig uitgeschreven) -->
       <section id="contact" class="band">
         <h2>Contact</h2>
         <div class="grid" style="margin-top:10px">
-          <div class="col-6 card">
-            <p style="color:#0f172a"><strong>Elke Losch</strong></p>
-            <p class="muted" style="margin-top:6px; color:#4b5563">Werkgebied: Utrecht en omgeving</p>
+          <div class="col-7 card">
+            <p style="color:#0e1116; font-weight:600">E-mail</p>
+            <p class="muted" style="margin-top:6px; color:#4d535b">
+              Stuur een bericht naar: <strong>elke_losch@yahoo.de</strong>
+            </p>
             <div class="divider"></div>
-            <div class="list">
-              <a class="btn primary" href="mailto:elke_losch@yahoo.de">✉️ E-mail</a>
-              <a class="btn" href="tel:+31648141864">📞 Bellen</a>
-              <a class="btn whatsapp" href="https://wa.me/31648141864" target="_blank" rel="noopener">WhatsApp</a>
+            <div style="display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn" href="mailto:elke_losch@yahoo.de" aria-label="Stuur een e-mail">Stuur e-mail</a>
+              <button class="btn ghost" type="button" aria-label="Kopieer e-mailadres" onclick="navigator.clipboard.writeText('elke_losch@yahoo.de')">Kopieer adres</button>
             </div>
-            <p class="muted" style="margin-top:10px; color:#4b5563">WhatsApp of sms heeft mijn voorkeur. Ik reageer zo snel mogelijk.</p>
           </div>
-          <div class="col-6 card">
-            <strong style="color:#0f172a">Beschikbaarheid</strong>
-            <p class="muted" style="margin-top:6px; color:#4b5563">Afspraken op werkdagen; tijden in overleg. Verwijzingen van je eigen tandarts zijn welkom.</p>
+          <div class="col-5 card">
+            <strong style="color:#0e1116">Werkgebied & beschikbaarheid</strong>
+            <p class="muted" style="margin-top:6px; color:#4d535b">Utrecht en omgeving. Afspraken op werkdagen; tijden in overleg. Verwijzingen via je eigen tandarts zijn welkom.</p>
           </div>
         </div>
       </section>
@@ -302,7 +312,6 @@
       .filter(Boolean);
 
     const links = Array.from(document.querySelectorAll('#sideNav .sidelink'));
-
     const byId = id => links.find(a => a.getAttribute('href') === '#' + id);
 
     const observer = new IntersectionObserver((entries) => {
