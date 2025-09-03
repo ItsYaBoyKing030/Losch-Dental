@@ -4,17 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elke Losch — Tandarts Endodontologie · Utrecht</title>
-  <meta name="description" content="Profiel van tandarts Elke Losch (Utrecht en regio). Endodontologie en begeleiding van angstpatiënten. Opleiding in Duitsland. Zelfstandig in twee praktijken en docent mondzorgkunde." />
+  <meta name="description" content="Profiel van tandarts Elke Losch (Utrecht en regio). Endodontologie en begeleiding van angstpatiënten. Opleiding in Duitsland. Zelfstandig in twee praktijken en docent tandheelkunde." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Inter (body) + Cormorant Garamond (luxury headings) -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Monochrome premium palette */
       --bg:#0b0e12; --bg-soft:#11151b; --ink:#E9EDF2; --muted:#A4ACB8;
       --line:#1a2028; --line-soft:#161b22;
       --card:#141920; --card-2:#181e26; --card-ink:#F2F5F9;
@@ -26,7 +24,6 @@
       --wrap:1160px; --measure:68ch;
     }
 
-    /* Base */
     *{box-sizing:border-box}
     html,body{height:100%}
     html{scroll-padding-top:80px}
@@ -113,12 +110,16 @@
     .cv-tl:before{content:""; position:absolute; left:155px; top:6px; bottom:6px; width:1px; background:rgba(255,255,255,.06)}
     @media (max-width: 700px){ .cv-item{grid-template-columns:1fr} .cv-tl:before{display:none} }
 
-    /* Motion respect */
+    /* CV bullets (subtiel) */
+    .cv-bullets{list-style:none; padding:0; margin:6px 0 0 0; display:grid; gap:6px}
+    .cv-bullets li{color:#A4ACB8; position:relative; padding-left:14px}
+    .cv-bullets li:before{content:""; width:6px; height:6px; border-radius:999px; background:#283241; position:absolute; left:0; top:.55em}
+
     @media (prefers-reduced-motion: reduce){
       .btn,.card{transition:none}
     }
 
-    /* === Mobile polish === */
+    /* Mobile polish */
     @media (max-width: 760px){
       .layout{ grid-template-columns:1fr; gap:16px; }
       section{ padding:22px 0; }
@@ -134,7 +135,7 @@
       .card{ border-radius:14px; padding:18px; }
     }
 
-    /* === Print / PDF (ultra clean) === */
+    /* Print / PDF */
     @media print{
       @page{ margin:18mm }
       *{ box-shadow:none !important; text-shadow:none !important }
@@ -160,7 +161,7 @@
       <div class="toplinks">
         <a class="chiplink" href="#over">Over</a>
         <a class="chiplink" href="#expertise">Expertise</a>
-        <a class="chiplink" href="#cv">CV</a>
+        <a class="chiplink" href="#cv">Curriculum Vitae</a>
         <a class="chiplink" href="#onderwijs">Onderwijs</a>
         <a class="btn" href="#contact">Contact</a>
       </div>
@@ -174,7 +175,7 @@
         <a class="sidelink" href="#hero">🏠 Intro</a>
         <a class="sidelink" href="#over">Over</a>
         <a class="sidelink" href="#expertise">Expertise</a>
-        <a class="sidelink" href="#cv">CV</a>
+        <a class="sidelink" href="#cv">Curriculum Vitae</a>
         <a class="sidelink" href="#onderwijs">Onderwijs</a>
         <a class="sidelink" href="#contact">Contact</a>
         <span class="hairline" style="margin:6px 0"></span>
@@ -194,7 +195,7 @@
               <p class="muted" style="font-size:17px; margin-top:8px">
                 Precisie, rust en heldere communicatie. Ik ben Elke Losch,
                 zelfstandig tandarts actief bij twee praktijken in en rond Utrecht
-                en docent mondzorgkunde aan de hogeschool in Utrecht. Evidence-based en stap-voor-stap,
+                en docent tandheelkunde aan de hogeschool in Utrecht. Evidence-based en stap-voor-stap,
                 met aandacht voor comfort — ook bij angst.
               </p>
               <div class="chips">
@@ -256,20 +257,19 @@
           <div class="col-4 card">
             <strong style="color:#F1F5FA">Onderwijs &amp; begeleiding</strong>
             <div class="divider"></div>
-            <p class="muted">Docent mondzorgkunde in Utrecht: evidence-based, praktijkgericht en mensgericht.</p>
+            <p class="muted">Docent tandheelkunde in Utrecht: evidence-based, praktijkgericht en mensgericht.</p>
           </div>
         </div>
       </section>
 
-      <!-- CV (volledig uitgeschreven, volle breedte) -->
+      <!-- CURRICULUM VITAE -->
       <section id="cv" class="band">
         <div class="grid">
           <div class="col-12">
             <div class="card">
-              <h2>CV</h2>
-              <p class="muted" style="margin-top:6px">Laatst bijgewerkt: september 2025 — werkzaamheden ongewijzigd t.o.v. 2023.</p>
-              <div class="divider"></div>
+              <h2>Curriculum Vitae</h2>
 
+              <div class="divider"></div>
               <strong style="color:#F1F5FA">Profiel</strong>
               <p class="muted" style="margin-top:8px">
                 Ik heb een hoog energieniveau en werk graag met ambitieuze collega’s samen om een optimaal resultaat te bereiken.
@@ -282,42 +282,54 @@
                   <div class="cv-when">oktober 2022 – heden</div>
                   <div>
                     <div class="cv-what">Implantologie Odijk — Tandarts</div>
-                    <div class="cv-where">Tandheelkundige behandelingen; endodontische casuïstiek.</div>
+                    <ul class="cv-bullets">
+                      <li>Tandheelkundige behandelingen; endodontische casuïstiek.</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="cv-item">
                   <div class="cv-when">september 2022 – heden</div>
                   <div>
                     <div class="cv-what">Hogeschool Utrecht — Docent mondzorgkunde</div>
-                    <div class="cv-where">Klinische vaardigheden, communicatie en patiëntgericht werken.</div>
+                    <ul class="cv-bullets">
+                      <li>Klinische vaardigheden, communicatie en patiëntgericht werken.</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="cv-item">
                   <div class="cv-when">juli 2012 – heden</div>
                   <div>
                     <div class="cv-what">Staalwijk Tandartspraktijk — Tandarts (endodontologie)</div>
-                    <div class="cv-where">Diagnostiek, (her)behandeling en samenwerking met verwijzers.</div>
+                    <ul class="cv-bullets">
+                      <li>Diagnostiek, (her)behandeling en samenwerking met verwijzers.</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="cv-item">
                   <div class="cv-when">januari 2011 – april 2012</div>
                   <div>
                     <div class="cv-what">SanaCaregroep B.V. — Tandarts</div>
-                    <div class="cv-where">Tandheelkundige behandelingen.</div>
+                    <ul class="cv-bullets">
+                      <li>Tandheelkundige behandelingen.</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="cv-item">
                   <div class="cv-when">februari 2010 – december 2010</div>
                   <div>
                     <div class="cv-what">T-Clinics — Tandarts</div>
-                    <div class="cv-where">Tandheelkundige behandelingen.</div>
+                    <ul class="cv-bullets">
+                      <li>Tandheelkundige behandelingen.</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="cv-item">
                   <div class="cv-when">augustus 2007 – december 2009</div>
                   <div>
                     <div class="cv-what">Duitsland — diverse praktijken (Berlijn, Emsdetten)</div>
-                    <div class="cv-where">Algemene tandheelkunde.</div>
+                    <ul class="cv-bullets">
+                      <li>Algemene tandheelkunde.</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -329,21 +341,25 @@
                   <div class="cv-when">mei 2011 – maart 2012</div>
                   <div>
                     <div class="cv-what">Master Endodontologie — Münster (Duitsland)</div>
-                    <div class="cv-where">Diploma behaald.</div>
+                    <ul class="cv-bullets">
+                      <li>Diploma behaald.</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="cv-item">
                   <div class="cv-when">2001 – 2007</div>
                   <div>
                     <div class="cv-what">Tandheelkunde — Christian-Albrechts-Universität Kiel (Duitsland)</div>
-                    <div class="cv-where">Diploma behaald.</div>
+                    <ul class="cv-bullets">
+                      <li>Diploma behaald.</li>
+                    </ul>
                   </div>
                 </div>
               </div>
 
               <div class="divider"></div>
               <strong style="color:#F1F5FA">Vaardigheden</strong>
-              <p class="muted" style="margin-top:8px">Communicatief vaardig · Oplossingsgericht · Flexibel</p>
+              <p class="muted" style="margin-top:8px">Communicatief sterk · Punctueel · Oplossingsgericht · Flexibel</p>
             </div>
           </div>
         </div>
