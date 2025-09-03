@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elke Losch — Tandarts Endodontologie · Utrecht</title>
-  <meta name="description" content="Profiel van tandarts Elke Losch (Utrecht en regio). Endodontologie en begeleiding van angstpatiënten. Opleiding in Duitsland. Zelfstandig in twee praktijken en docent tandheelkunde." />
+  <meta name="description" content="Profiel van tandarts Elke Losch (Utrecht en regio). Endodontologie en begeleiding van angstpatiënten. Opleiding in Duitsland. Zelfstandig in twee praktijken en docent mondzorgkunde." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,13 +48,11 @@
     .muted{color:var(--muted)}
     .eyebrow{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#c6cbd3; opacity:.9}
 
-    /* Type */
     h1,h2{font-family:"Cormorant Garamond", serif; line-height:1.1; letter-spacing:.2px; margin:0}
     h1{font-weight:700; font-size:clamp(34px,4vw,48px)}
     h2{font-weight:600; font-size:clamp(22px,3vw,30px)}
     p{margin:0; max-width:var(--measure)}
 
-    /* Header */
     header{position:sticky; top:0; z-index:60; backdrop-filter:blur(10px); background:rgba(13,17,22,.78); border-bottom:1px solid var(--line)}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0}
     .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
@@ -63,45 +61,37 @@
     .chiplink{padding:8px 12px; border-radius:12px; border:1px solid var(--line); color:var(--muted); background:linear-gradient(180deg,#0f1318,#0b0f14); transition:background .25s ease, border-color .25s ease, color .25s ease}
     .chiplink:hover{color:#fff; background:#0c1116; border-color:#212733}
 
-    /* Buttons */
     .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:10px 16px; border-radius:12px; font-weight:600; border:1px solid var(--line); background:linear-gradient(180deg,var(--btn-top),var(--btn-bot)); color:#F3F6FA; box-shadow:0 10px 24px rgba(0,0,0,.38); transition:transform .2s ease, box-shadow .2s ease}
     .btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px rgba(0,0,0,.42)}
     .btn.ghost{background:transparent; color:var(--ink)}
     .btn:focus-visible{outline:none; box-shadow:var(--focus)}
 
-    /* Layout */
     .layout{display:grid; grid-template-columns:280px 1fr; gap:22px}
     @media (max-width: 980px){ .layout{grid-template-columns:1fr} }
 
-    /* Sidebar */
     aside{position:sticky; top:88px; height:max-content; background:linear-gradient(180deg,#10141a,#0e1217); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:var(--shadow)}
     .sideblock{display:flex; flex-direction:column; gap:12px}
     .sidelink{display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:12px; color:var(--muted); letter-spacing:.2px; border:1px solid transparent; transition:background .2s ease, color .2s ease, border-color .2s ease}
     .sidelink:hover{background:#0c1116; color:#fff; border-color:var(--line)}
     .sidelink.active{background:#0c1116; color:#fff; border-color:var(--line)}
 
-    /* Sections */
     section{padding:30px 0}
     .band{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
 
-    /* Grid helpers */
     .grid{display:grid; gap:16px; grid-template-columns:repeat(12,1fr)}
     .col-12{grid-column:span 12} .col-8{grid-column:span 8} .col-4{grid-column:span 4} .col-7{grid-column:span 7} .col-5{grid-column:span 5} .col-6{grid-column:span 6}
     @media (max-width: 980px){ .grid{grid-template-columns:1fr} .col-12,.col-8,.col-4,.col-7,.col-5,.col-6{grid-column:auto} }
 
-    /* Cards */
     .card{background:var(--card); color:var(--card-ink); border:1px solid var(--line); border-radius:var(--radius-lg); padding:24px; box-shadow:var(--shadow); transition:transform .2s ease, box-shadow .2s ease}
     .card:hover{transform:translateY(-1px); box-shadow:0 22px 62px rgba(0,0,0,.44)}
     .card.alt{background:var(--card-2)}
 
-    /* Chips */
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
     .chip{background:var(--chip); border:1px solid var(--chip-line); padding:6px 10px; border-radius:999px; font-size:12.5px; color:#C9CFD8; opacity:.92}
 
     .divider{height:1px; background:linear-gradient(90deg, transparent, #26303c, transparent); margin:18px 0}
     footer{padding:26px 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
 
-    /* CV timeline */
     .cv-tl{position:relative; display:grid; gap:14px; margin-top:8px}
     .cv-item{display:grid; grid-template-columns:170px 1fr; gap:18px; align-items:start}
     .cv-when{color:#C9CFD8; font-weight:600; opacity:.95}
@@ -110,7 +100,6 @@
     .cv-tl:before{content:""; position:absolute; left:155px; top:6px; bottom:6px; width:1px; background:rgba(255,255,255,.06)}
     @media (max-width: 700px){ .cv-item{grid-template-columns:1fr} .cv-tl:before{display:none} }
 
-    /* CV bullets (subtiel) */
     .cv-bullets{list-style:none; padding:0; margin:6px 0 0 0; display:grid; gap:6px}
     .cv-bullets li{color:#A4ACB8; position:relative; padding-left:14px}
     .cv-bullets li:before{content:""; width:6px; height:6px; border-radius:999px; background:#283241; position:absolute; left:0; top:.55em}
@@ -119,7 +108,6 @@
       .btn,.card{transition:none}
     }
 
-    /* Mobile polish */
     @media (max-width: 760px){
       .layout{ grid-template-columns:1fr; gap:16px; }
       section{ padding:22px 0; }
@@ -135,7 +123,6 @@
       .card{ border-radius:14px; padding:18px; }
     }
 
-    /* Print / PDF */
     @media print{
       @page{ margin:18mm }
       *{ box-shadow:none !important; text-shadow:none !important }
@@ -195,7 +182,7 @@
               <p class="muted" style="font-size:17px; margin-top:8px">
                 Precisie, rust en heldere communicatie. Ik ben Elke Losch,
                 zelfstandig tandarts actief bij twee praktijken in en rond Utrecht
-                en docent tandheelkunde aan de hogeschool in Utrecht. Evidence-based en stap-voor-stap,
+                en docent mondzorgkunde aan de hogeschool in Utrecht. Evidence-based en stap-voor-stap,
                 met aandacht voor comfort — ook bij angst.
               </p>
               <div class="chips">
@@ -257,7 +244,7 @@
           <div class="col-4 card">
             <strong style="color:#F1F5FA">Onderwijs &amp; begeleiding</strong>
             <div class="divider"></div>
-            <p class="muted">Docent tandheelkunde in Utrecht: evidence-based, praktijkgericht en mensgericht.</p>
+            <p class="muted">Docent mondzorgkunde in Utrecht: evidence-based, praktijkgericht en mensgericht.</p>
           </div>
         </div>
       </section>
@@ -349,7 +336,7 @@
                 <div class="cv-item">
                   <div class="cv-when">2001 – 2007</div>
                   <div>
-                    <div class="cv-what">Tandheelkunde — Christian-Albrechts-Universität Kiel (Duitsland)</div>
+                    <div class="cv-what">Mondzorgkunde — Christian-Albrechts-Universität Kiel (Duitsland)</div>
                     <ul class="cv-bullets">
                       <li>Diploma behaald.</li>
                     </ul>
